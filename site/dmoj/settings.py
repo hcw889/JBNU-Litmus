@@ -46,7 +46,7 @@ ALLOWED_HOSTS = []
 SITE_ID = 1
 SITE_NAME = 'Litmus'
 SITE_LONG_NAME = 'Litmus: Modern Online Judge'
-SITE_ADMIN_EMAIL = 'jbnualps@jbnu.ac.kr'
+SITE_ADMIN_EMAIL = 'litmus@jbnu.ac.kr'
 
 DMOJ_REQUIRE_STAFF_2FA = True
 # Display warnings that admins will not perform 2FA recovery.

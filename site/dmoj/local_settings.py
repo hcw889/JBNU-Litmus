@@ -123,11 +123,11 @@ EMAIL_PORT = 587
 # A tuple of (name, email) pairs that specifies those who will be mailed
 # when the server experiences an error when DEBUG = False.
 ADMINS = (
-    ('alps', 'jbnualps@jbnu.ac.kr'),
+    ('alps', 'litmus@jbnu.ac.kr'),
 )
 
 # The sender for the aforementioned emails.
-SERVER_EMAIL = 'jbnualps@jbnu.ac.kr'
+SERVER_EMAIL = 'litmus@jbnu.ac.kr'
 
 
 ################################################
@@ -160,7 +160,7 @@ DMOJ_PDF_PROBLEM_TEMP_DIR = STATIC_ROOT
 ## DMOJ site display settings.
 SITE_NAME = 'Litmus'
 SITE_LONG_NAME = 'Litmus: Modern Online Judge'
-SITE_ADMIN_EMAIL = 'jbnualps@jbnu.ac.kr'
+SITE_ADMIN_EMAIL = 'litmus@jbnu.ac.kr'
 TERMS_OF_SERVICE_URL = '//dmoj.ca/tos/'  # Use a flatpage.
 
 ## Bridge controls.

@@ -81,6 +81,6 @@ Litmus는 [litmus.jbnu.ac.kr](https://litmus.jbnu.ac.kr)에서 이용할 수 있
 
 ## 문의
 
-- **관리자**: jbnualps@jbnu.ac.kr
+- **관리자**: litmus@jbnu.ac.kr
 - **소속**: 전북대학교 컴퓨터공학부 ALPS (Litmus 개발팀)
 - **웹사이트**: [litmus.jbnu.ac.kr](https://litmus.jbnu.ac.kr)
