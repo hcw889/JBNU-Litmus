@@ -76,6 +76,7 @@ judges.conf.new
 .codeium/
 .windsurf-server/
 hcpark_log_temp/
+.codex/
 
 site/resources/icons/problems_images/
 
