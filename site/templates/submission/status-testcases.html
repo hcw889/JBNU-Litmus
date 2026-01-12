@@ -295,7 +295,7 @@ function confirm_rejudge() {
                     <h3 class="card-title">{{ _('Compilation Error') }}</h3>
                 </div>
                 <div class="card-content">
-                    <div class="warning-text">{{ submission.error|ansi2html }}</div>
+                    <div class="warning-text">{{ submission.error|replace('You are a troll. Trolls are not welcome. As a judge, I sentence your code to death.', '컴파일 에러: 컴파일러 진단 메시지를 수신하지 못했습니다.')|ansi2html }}</div>
                 </div>
             </div>
         {% else %}
