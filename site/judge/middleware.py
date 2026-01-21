@@ -258,7 +258,7 @@ class SimpleCSPMiddleware:
         # unsafe-inline 제거
         response['Content-Security-Policy'] = (
             f"default-src 'self'; "
-            f"script-src 'self' 'nonce-{nonce}' 'strict-dynamic' cdnjs.cloudflare.com ajax.googleapis.com; "
+            f"script-src 'self' 'nonce-{nonce}' 'strict-dynamic'; "
             f"style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com maxcdn.bootstrapcdn.com; "
             f"font-src 'self' maxcdn.bootstrapcdn.com cdnjs.cloudflare.com; "
             f"img-src 'self' data: www.gravatar.com gravatar.com; "
