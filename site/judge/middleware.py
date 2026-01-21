@@ -1,4 +1,5 @@
 import base64
+import secrets
 import hmac
 import re
 import struct
@@ -250,17 +251,21 @@ class SimpleCSPMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
+        nonce = base64.b64encode(secrets.token_bytes(16)).decode('ascii')
+        request.csp_nonce = nonce
+
         response = self.get_response(request)
         # unsafe-inline 제거
         response['Content-Security-Policy'] = (
-            "default-src 'self'; "
-            "script-src 'self' cdnjs.cloudflare.com ajax.googleapis.com; "
-            "style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com maxcdn.bootstrapcdn.com; "
-            "font-src 'self' maxcdn.bootstrapcdn.com cdnjs.cloudflare.com; "
-            "img-src 'self' data: www.gravatar.com gravatar.com; "
-            "frame-ancestors 'none'; "
-            "object-src 'none'"
+            f"default-src 'self'; "
+            f"script-src 'self' 'nonce-{nonce}' 'strict-dynamic' cdnjs.cloudflare.com ajax.googleapis.com; "
+            f"style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com maxcdn.bootstrapcdn.com; "
+            f"font-src 'self' maxcdn.bootstrapcdn.com cdnjs.cloudflare.com; "
+            f"img-src 'self' data: www.gravatar.com gravatar.com; "
+            f"frame-ancestors 'none'; "
+            f"object-src 'none'"
         )
+
         return response
     
 class NoCacheMiddleware:
