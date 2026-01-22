@@ -72,11 +72,11 @@
     {% endif %}
 
     {% compress js %}
-        <script>{{ inlinei18n(LANGUAGE_CODE)|safe }}</script>
+        <script nonce="{{ request.csp_nonce }}">{{ inlinei18n(LANGUAGE_CODE)|safe }}</script>
         {% if INLINE_JQUERY %}
-            <script src="{{ static('libs/jquery-3.4.1.min.js') }}"></script>
+            <script nonce="{{ request.csp_nonce }}" src="{{ static('libs/jquery-3.4.1.min.js') }}"></script>
         {% endif %}
-        <script>
+        <script nonce="{{ request.csp_nonce }}">
             // 네비게이션바 active 상태 처리
             document.addEventListener('DOMContentLoaded', function() {
                 const currentPath = window.location.pathname;
@@ -92,14 +92,14 @@
                 });
             });
         </script>
-        <script src="{{ static('libs/jquery-cookie.js') }}"></script>
-        <script src="{{ static('libs/jquery-taphold.js') }}"></script>
-        <script src="{{ static('libs/jquery.unveil.js') }}"></script>
-        <script src="{{ static('libs/moment.js') }}"></script>
-        <script src="{{ static('libs/select2/select2.js') }}"></script>
+        <script nonce="{{ request.csp_nonce }}" src="{{ static('libs/jquery-cookie.js') }}"></script>
+        <script nonce="{{ request.csp_nonce }}" src="{{ static('libs/jquery-taphold.js') }}"></script>
+        <script nonce="{{ request.csp_nonce }}" src="{{ static('libs/jquery.unveil.js') }}"></script>
+        <script nonce="{{ request.csp_nonce }}" src="{{ static('libs/moment.js') }}"></script>
+        <script nonce="{{ request.csp_nonce }}" src="{{ static('libs/select2/select2.js') }}"></script>
         {% include "extra_js.html" %}
-        <script src="{{ static('common.js') }}"></script>
-        <script>
+        <script nonce="{{ request.csp_nonce }}" src="{{ static('common.js') }}"></script>
+        <script nonce="{{ request.csp_nonce }}">
             moment.locale('{{ LANGUAGE_CODE }}');
             set_date_locale('{{ LANGUAGE_CODE }}');
             $(function () {
@@ -107,7 +107,7 @@
             });
         </script>
          <!-- JavaScript for toggling menu -->
-        <script>
+        <script nonce="{{ request.csp_nonce }}">
             function toggleMenu() {
                 var navList = document.getElementById('nav-list');
                 if (navList.classList.contains('show')) {
@@ -121,7 +121,7 @@
     {% endcompress %}
     {% block js_media %}{% endblock %}
     {% if request.in_contest %}
-    <script>
+    <script nonce="{{ request.csp_nonce }}">
         $(function () {
             count_down($("#contest-time-remaining"));
         
@@ -178,7 +178,7 @@
     {% endif %}
 
     {% if request.user.is_authenticated %}
-        <script>
+        <script nonce="{{ request.csp_nonce }}">
             window.user = {
                 email: '{{ request.user.email|escapejs }}',
                 id: '{{ request.user.id|escapejs }}',
@@ -186,7 +186,7 @@
             };
         </script>
     {% else %}
-        <script>window.user = {};</script>
+        <script nonce="{{ request.csp_nonce }}">window.user = {};</script>
     {% endif %}
 
     {% if misc_config.analytics %}
@@ -195,7 +195,7 @@
 
     {# Don't run userscript since it may be malicious #}
     {% if request.user.is_authenticated and request.profile.user_script and not request.user.is_impersonate and not ignore_user_script %}
-        <script type="text/javascript">{{ request.profile.user_script|safe }}</script>
+        <script nonce="{{ request.csp_nonce }}" type="text/javascript">{{ request.profile.user_script|safe }}</script>
     {% endif %}
 
     <noscript>

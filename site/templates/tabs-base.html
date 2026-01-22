@@ -97,7 +97,7 @@
     }
 </style>
 
-<script>
+<script nonce="{{ request.csp_nonce }}">
     document.addEventListener('DOMContentLoaded', function () {
         const tabs = document.querySelectorAll('.tabs .tab');
         tabs.forEach(tab => {

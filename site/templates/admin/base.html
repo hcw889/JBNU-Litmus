@@ -24,23 +24,23 @@
 	{% with WPADMIN_DEV=0 %}{% if WPADMIN_DEV %}
 	<link rel="stylesheet/less" type="text/css" href="{% static "wpadmin/less/wpadmin.less" %}" />
 	<link rel="stylesheet/less" type="text/css" href="{% static "wpadmin/less/themes/default/theme.less" %}" />
-	<script type="text/javascript">less = { env: "development" };</script>
-	<script type="text/javascript" src="{% static "wpadmin/js/lib/less.min.js" %}"></script>
+	<script nonce="{{ request.csp_nonce }}" type="text/javascript">less = { env: "development" };</script>
+	<script nonce="{{ request.csp_nonce }}" type="text/javascript" src="{% static "wpadmin/js/lib/less.min.js" %}"></script>
 	{% else %}
 	<link rel="stylesheet" type="text/css" href="{% static "wpadmin/css/wpadmin.css" %}" />
 	<link rel="stylesheet" type="text/css" href="{% static "wpadmin/css/themes/default.css" %}" />
 	{% endif %}{% endwith %}
 	{# WP Admin end #}
-	<script
+	<script nonce="{{ request.csp_nonce }}"
 		type="text/javascript">window.__admin_media_prefix__ = "{% filter escapejs %}{% static "admin/" %}{% endfilter %}";</script>
-	<script
+	<script nonce="{{ request.csp_nonce }}"
 		type="text/javascript">window.__admin_utc_offset__ = "{% filter escapejs %}{% now "Z" %}{% endfilter %}";</script>
 	{% block extrahead %}{% endblock %}
 	{% wpadmin_render_custom_style %}
 	{% block wpadmin_extrastyle %}{% endblock %}
 	{% block wpadmin_extrahead %}{% endblock %}
 	{# WP Admin start #}
-	<script type="text/javascript">
+	<script nonce="{{ request.csp_nonce }}" type="text/javascript">
 		// needed for setting cookie path
 		window.__admin_url = '{% url 'admin:index' %}';
 		// cookie name
@@ -58,9 +58,9 @@
 			}
 		}
 	</script>
-	<script type="text/javascript" src="{% static "wpadmin/js/lib/jquery.cookie.min.js" %}"></script>
-	<script type="text/javascript" src="{% static "wpadmin/js/menus.js" %}"></script>
-	<script type="text/javascript" src="{% static "wpadmin/js/content.js" %}"></script>
+	<script nonce="{{ request.csp_nonce }}" type="text/javascript" src="{% static "wpadmin/js/lib/jquery.cookie.min.js" %}"></script>
+	<script nonce="{{ request.csp_nonce }}" type="text/javascript" src="{% static "wpadmin/js/menus.js" %}"></script>
+	<script nonce="{{ request.csp_nonce }}" type="text/javascript" src="{% static "wpadmin/js/content.js" %}"></script>
 	<link rel="stylesheet" type="text/css" href="{% static "wpadmin/css/wpadmin.site.css" %}" />
 	{# WP Admin end #}
 	{% block blockbots %}
