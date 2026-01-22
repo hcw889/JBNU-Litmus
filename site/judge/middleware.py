@@ -250,25 +250,6 @@ class KeycloakSSOMiddleware(MiddlewareMixin):
 class SimpleCSPMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
-<<<<<<< HEAD
-
-    def __call__(self, request):
-        nonce = base64.b64encode(secrets.token_bytes(16)).decode('ascii')
-        request.csp_nonce = nonce
-
-        response = self.get_response(request)
-        # unsafe-inline 제거
-        response['Content-Security-Policy'] = (
-            f"default-src 'self'; "
-            f"script-src 'self' 'nonce-{nonce}' 'strict-dynamic' cdnjs.cloudflare.com ajax.googleapis.com; "
-            f"style-src 'self' 'unsafe-inline' cdnjs.cloudflare.com maxcdn.bootstrapcdn.com; "
-            f"font-src 'self' maxcdn.bootstrapcdn.com cdnjs.cloudflare.com; "
-            f"img-src 'self' data: www.gravatar.com gravatar.com; "
-            f"frame-ancestors 'none'; "
-            f"object-src 'none'"
-        )
-
-=======
         self.csp_value = getattr(
             settings,
             'CSP_HEADER_VALUE',
@@ -320,7 +301,6 @@ class SimpleCSPMiddleware:
             except Exception:
                 # If anything goes wrong, leave the response unchanged.
                 pass
->>>>>>> d29b99b (strict-dynamic,스크립트 허용목록,누락된CSP해결)
         return response
     
 class NoCacheMiddleware:
