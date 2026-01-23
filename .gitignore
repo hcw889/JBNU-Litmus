@@ -77,8 +77,17 @@ judges.conf.new
 .windsurf-server/
 hcpark_log_temp/
 .codex/
+.claude/
+.claude.json
+.claude.json.backup
+
 
 site/resources/icons/problems_images/
+
+site/resources/jplag/*
+!site/resources/jplag/.gitkeep
+site/resources/static/jplag_reports/*
+!site/resources/static/jplag_reports/.gitkeep
 
 #settings.py (dev/service)
 site/dmoj/settings.py
