@@ -3,7 +3,7 @@
 {% block title_ruler %}{% endblock %}
 
 {% block title_row %}
-{% set tab = 'moss' %}
+{% set tab = 'jplag' %}
 {% set title = contest.name %}
 {% include "contest/contest-tabs.html" %}
 {% endblock %}
@@ -13,7 +13,7 @@
     .title-area {
         margin-bottom: 28px;
     }
-    .button, input[type="submit"].contest-moss {
+    .button, input[type="submit"].contest-jplag {
         width: auto;
         background: none;
         background-color: #5C95D9;
@@ -21,12 +21,12 @@
         border-radius: 8px;
         transition: background-color 0.3s ease, color 0.3s ease;
     }
-    .button, input[type="submit"].contest-moss:hover {
+    .button, input[type="submit"].contest-jplag:hover {
         background: none;
         background-color: #5288C8;
         color: #FAFAFA;
     }
-    input[type="submit"].contest-moss-delete {
+    input[type="submit"].contest-jplag-delete {
         width: auto;
     }
     .panes {
@@ -69,17 +69,40 @@
     .table th:last-child {
         border-top-right-radius: 10px !important; /* 테이블의 오른쪽 위 모서리 */
     }
+    .jplag-tooltip {
+        position: relative;
+    }
+    .jplag-tooltip::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        left: 50%;
+        bottom: 100%;
+        transform: translate(-50%, -6px);
+        background: #222;
+        color: #fff;
+        padding: 4px 6px;
+        border-radius: 4px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.15s ease;
+        z-index: 10;
+        font-size: 12px;
+    }
+    .jplag-tooltip:hover::after {
+        opacity: 1;
+    }
 </style>
 {% endblock %}
 
 {% block content_js_media %}
 <script type="text/javascript">
     $(function () {
-        $('.contest-moss').click(function () {
-            return confirm('{{ _('Are you sure you want to MOSS the contest ? ') }}');
+        $('.contest-jplag').click(function () {
+            return confirm('{{ _('Are you sure you want to run JPlag for the contest?') }}');
         });
-        $('.contest-moss-delete').click(function () {
-            return confirm('{{ _('Are you sure you want to delete the MOSS results ? ') }}');
+        $('.contest-jplag-delete').click(function () {
+            return confirm('{{ _('Are you sure you want to delete the JPlag results?') }}');
         });
     });
 </script>
@@ -96,19 +119,31 @@
         </tr>
     </thead>
     <tbody>
-        {% for problem, results in moss_results %}
+        {% for problem, results in jplag_results %}
         <tr id="problem-{{ problem.code }}">
             <td>
                 <a href="{{ url('problem_detail', problem.code) }}">{{ problem.name }}</a>
             </td>
             {% for result in results %}
-            <td>
-                {% if result.submission_count %}
+            <td{% if result.submission_count == 1 %} class="jplag-tooltip" data-tooltip="제출자가 2명 이상일 때만 표절 검사가 가능합니다."{% endif %}>
+                {% if result.submission_count and result.submission_count >= 2 and result.url %}
                 <a href="{{ result.url }}">{% trans trimmed count=result.submission_count %}
                     {{ count }} submission
                     {% pluralize %}
                     {{ count }} submissions
                     {% endtrans %}</a>
+                {% elif result.submission_count == 1 %}
+                {% trans trimmed count=result.submission_count %}
+                    {{ count }} submission
+                    {% pluralize %}
+                    {{ count }} submissions
+                {% endtrans %}
+                {% elif result.submission_count %}
+                {% trans trimmed count=result.submission_count %}
+                    {{ count }} submission
+                    {% pluralize %}
+                    {{ count }} submissions
+                    {% endtrans %}
                 {% else %}
                 {{ _('No submissions') }}
                 {% endif %}
@@ -121,17 +156,17 @@
 {% endif %}
 <div class="panes">
     <div class="pane">
-        <form method="post" action="{{ url('contest_moss', contest.key) }}">
+        <form method="post" action="{{ url('contest_jplag', contest.key) }}">
             {% csrf_token %}
-            <input type="submit" class="unselectable button full contest-moss" style="padding: 10px;"
+            <input type="submit" class="unselectable button full contest-jplag" style="padding: 10px;"
                 value="{% if has_results %} 제출물 표절 검사 다시 하기 {% else %} 제출물 표절 검사 하기 {% endif %}">
         </form>
     </div>
     {% if has_results %}
     <div class="pane">
-        <form method="post" action="{{ url('contest_moss_delete', contest.key) }}">
+        <form method="post" action="{{ url('contest_jplag_delete', contest.key) }}">
             {% csrf_token %}
-            <input type="submit" class="unselectable button full contest-moss-delete" style="padding: 10px;"
+            <input type="submit" class="unselectable button full contest-jplag-delete" style="padding: 10px;"
                 value="표절 검사 결과 삭제">
         </form>
     </div>
