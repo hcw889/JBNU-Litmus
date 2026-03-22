@@ -464,8 +464,17 @@ col.sub-info, td.sub-info {
   text-align: center;
 }
 
+.filter-form-group {
+  display: block;
+  margin-bottom: 8px;
+}
 .filter-form-group label {
-  margin: 0 5px;
+  display: block;
+  margin: 0 5px 4px;
+  font-weight: 500;
+}
+.filter-form-group select, .filter-form-group .select2-container {
+  width: 100% !important;
 }
 
 body:has(.submission-header) .content-body-box {

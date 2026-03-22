@@ -3133,6 +3133,7 @@ body:has(.user-sidebar-area) .title-div {
 .user-sidebar-div {
   width: 1040px;
   margin: 0 auto;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #FFF;
@@ -5245,7 +5246,7 @@ a.voted {
   flex: 1;
 }
 
-img.user-gravatar {
+.new-comments img.user-gravatar {
   border-radius: 50%;
   border: 1px solid var(--border-color);
   width: 100%;
@@ -5976,8 +5977,17 @@ col.sub-info, td.sub-info {
   text-align: center;
 }
 
+.filter-form-group {
+  display: block;
+  margin-bottom: 8px;
+}
 .filter-form-group label {
-  margin: 0 5px;
+  display: block;
+  margin: 0 5px 4px;
+  font-weight: 500;
+}
+.filter-form-group select, .filter-form-group .select2-container {
+  width: 100% !important;
 }
 
 body:has(.submission-header) .content-body-box {
@@ -8386,52 +8396,44 @@ body:has(#problem_submit) .form-area {
   color: #8391A1;
 }
 
-.submit-bar input {
+body:has(#problem_submit) .submit-bar input {
   background: none;
   background-color: #5C95D9;
   border: 1px solid #5C95D9;
   color: #FFFFFF;
   border-radius: 8px;
 }
-
-.title-box {
-  padding-top: 0.2px;
-}
-
-.title-div {
+body:has(#problem_submit) .title-div {
   margin-left: auto;
   margin-right: auto;
   width: 1040px;
   margin-top: 24px;
 }
-
-.django-ace-toolbar {
+body:has(#problem_submit) .django-ace-toolbar {
   background: #fff;
 }
-
-.select2-container--default .select2-selection--single {
+body:has(#problem_submit) .select2-container--default .select2-selection--single {
   border: 1px solid #d9d9d9;
   border-radius: 8px;
   height: 35px;
 }
-.select2-container--default .select2-selection--single .select2-selection__rendered {
+body:has(#problem_submit) .select2-container--default .select2-selection--single .select2-selection__rendered {
   line-height: 35px;
 }
-.select2-container--default .select2-selection--single .select2-selection__arrow {
+body:has(#problem_submit) .select2-container--default .select2-selection--single .select2-selection__arrow {
   height: 35px;
 }
-.select2-container--default .select2-search--dropdown .select2-search__field {
+body:has(#problem_submit) .select2-container--default .select2-search--dropdown .select2-search__field {
   display: none;
 }
-
-.select2-container {
+body:has(#problem_submit) .select2-container {
   margin-right: 5px;
 }
-.select2-container--open .select2-dropdown--above {
+body:has(#problem_submit) .select2-container--open .select2-dropdown--above {
   border: 1px solid #d9d9d9;
   border-bottom: none;
 }
-.select2-container--open .select2-dropdown--below {
+body:has(#problem_submit) .select2-container--open .select2-dropdown--below {
   border: 1px solid #d9d9d9;
   border-top: none;
 }
@@ -8448,15 +8450,15 @@ body:has(#problem_submit) .form-area {
 #content {
   width: 100%;
   height: 100%;
-  margin-left: 0 auto;
-  margin-right: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 25px;
 }
 @media screen and (max-width: 1200px) {
   #content {
     width: 100%;
-    margin-left: 0 auto;
-    margin-right: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

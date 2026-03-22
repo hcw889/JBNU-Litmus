@@ -489,7 +489,20 @@ col.sub-info, td.sub-info { width: 78%; }
     }
 }
 
-.filter-form-group label { margin: 0 5px; }
+.filter-form-group {
+    display: block;
+    margin-bottom: 8px;
+
+    label {
+        display: block;
+        margin: 0 5px 4px;
+        font-weight: 500;
+    }
+
+    select, .select2-container {
+        width: 100% !important;
+    }
+}
 
 // 제출 목록 레이아웃 (submission list page 전용)
 body:has(.submission-header) {
