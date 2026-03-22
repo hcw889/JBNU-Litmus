@@ -188,4 +188,153 @@ div.ticket-title small {
   margin: 10px 0 0 auto;
 }
 
+body:has(#ticket-list-container) .title-div {
+  display: none;
+}
+body:has(#ticket-list-container) .h-scrollable-table {
+  overflow-x: auto;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid var(--border-color);
+}
+body:has(#ticket-list-container) .container-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+body:has(#ticket-list-container) .container-box .filter-check {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 6px 12px 6px 8px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  order: 0;
+  flex-grow: 0;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+body:has(#ticket-list-container) #hide-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 25px;
+  padding: 5px 15px;
+  cursor: pointer;
+  background: #FFFFFF;
+}
+body:has(#ticket-list-container) #hide-checkbox input[type=checkbox] {
+  display: none;
+}
+body:has(#ticket-list-container) #hide-checkbox label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+body:has(#ticket-list-container) #hide-checkbox .checkbox-svg {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+body:has(#ticket-list-container) #hide-checkbox .text {
+  color: #8391A1;
+  font-weight: 400;
+  line-height: 1;
+}
+body:has(#ticket-list-container) #hide-checkbox input[type=checkbox]:checked + label .text {
+  color: #000000;
+}
+body:has(#ticket-list-container) input[type=checkbox]:checked + label .checkbox-svg path {
+  fill: rgb(92, 149, 217);
+}
+body:has(#ticket-list-container) .filter-select2 select {
+  width: 100%;
+}
+body:has(#ticket-list-container) .filter-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 15px;
+  border: 1px solid rgba(92, 149, 217, 0.3607843137);
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  color: #000000;
+  background: rgba(92, 149, 217, 0.07);
+  font-weight: 300;
+  font-family: Pretendard;
+}
+body:has(#ticket-list-container) .filter-btn:hover {
+  background-color: #E0E0E0;
+}
+body:has(#ticket-list-container) .filter-btn .arrow {
+  margin-left: 5px;
+}
+body:has(#ticket-list-container) .filter-select2 {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  width: 100%;
+  z-index: 1;
+}
+body:has(#ticket-list-container) .filter-btn.show .filter-select2 {
+  display: block;
+}
+body:has(#ticket-list-container) .filter-btn.show .arrow {
+  transform: rotate(180deg);
+}
+body:has(#ticket-list-container) main {
+  flex-grow: 1;
+}
+body:has(#ticket-list-container) table.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 0 !important;
+  border-right: none;
+}
+body:has(#ticket-list-container) table.table th, body:has(#ticket-list-container) table.table td {
+  padding: 10px;
+  text-align: center;
+  font-family: "Pretendard";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  color: #17171B;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  border-right: none;
+}
+body:has(#ticket-list-container) table.table th {
+  background-color: rgb(255, 255, 255);
+  font-weight: bold;
+  border-top: 1px solid var(--border-color);
+  border-style: none !important;
+}
+body:has(#ticket-list-container) table.table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+body:has(#ticket-list-container) table.table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+body:has(#ticket-list-container) #ticket-list > tbody > tr:nth-child(even) {
+  background: rgba(217, 217, 217, 0.03);
+}
+body:has(#ticket-list-container) table.table.striped tr:nth-child(odd) {
+  background: #FFFFFF;
+}
+body:has(#ticket-list-container) .top-pagination-bar, body:has(#ticket-list-container) .bottom-pagination-bar {
+  text-align: center;
+  margin: 10px 0;
+}
+
 /*# sourceMappingURL=ticket.css.map */

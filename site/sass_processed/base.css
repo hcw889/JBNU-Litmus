@@ -81,27 +81,6 @@ div.info-float {
   padding: 10px;
 }
 
-footer {
-  color: #808080;
-  display: block;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-
-body {
-  position: relative;
-  min-height: 100%;
-  margin: 0 auto;
-  max-width: 107em;
-  font-size: 14px;
-  line-height: 1.231;
-  background: #080808;
-  font-family: "Segoe UI", "Lucida Grande", Arial, sans-serif;
-  color: #fff;
-  height: 100%;
-}
-
 .unselectable {
   cursor: default;
 }
@@ -138,28 +117,6 @@ h4 {
   font-size: 1.1em;
   padding: 0;
   margin: 0;
-}
-
-hr {
-  color: rgba(0, 0, 0, 0.2);
-}
-
-#content {
-  margin: 52px auto auto;
-  width: 90%;
-  height: 100%;
-  min-height: 25em;
-  display: block;
-}
-#content .title {
-  color: #ccc;
-}
-
-footer {
-  text-align: center;
-  height: 40px;
-  border-top: 1px solid #3b3b3b;
-  background: #111;
 }
 
 html {
@@ -219,54 +176,6 @@ noscript #noscript {
   transform: rotate(90deg);
 }
 
-#form-errors, .form-errors {
-  background: rgba(255, 0, 0, 0.3);
-  border: 3px solid red;
-  border-radius: 4px;
-  padding: 0 1em 0.1em 1em;
-  margin: 0.3em 0 0.5em 0;
-}
-
-#contest-info {
-  font-size: 1.25em;
-  border: 5px solid #2980B9;
-  border-left: 5px dotted white;
-  border-radius: 0 4px 4px 0;
-  background: rgba(0, 0, 0, 0.77);
-  z-index: 100000;
-  padding: 10px 12px;
-  color: white;
-  cursor: move;
-  position: fixed;
-  left: 20px;
-  top: 90%;
-  display: none;
-}
-#contest-info a {
-  height: 1.4em;
-  padding: 0;
-  margin: 0;
-  color: white;
-  display: block;
-}
-
-#contest-time-remaining {
-  display: inline-block;
-}
-
-#page-container {
-  min-height: 100%;
-  position: relative;
-  margin: 0 auto;
-  border-right: 1px solid #3b3b3b;
-  border-left: 1px solid #3b3b3b;
-  background: #222;
-}
-
-#content-body {
-  padding-bottom: 4em;
-}
-
 .title-line-action {
   float: right;
   margin-top: 1.2em;
@@ -278,30 +187,6 @@ math {
 
 .MathJax:focus {
   outline: none;
-}
-
-@media (max-width: 1498px) {
-  #page-container {
-    border-left: none;
-    border-right: none;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-}
-@media (max-width: 830px) {
-  #content {
-    width: auto;
-    padding: 0 5px;
-  }
-  #nav-list {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  #user-links {
-    display: inline-flex;
-    align-items: center;
-  }
 }
 
 /*# sourceMappingURL=base.css.map */

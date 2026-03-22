@@ -42,3 +42,99 @@
     background: white;
     color: black;
 }
+
+// =============================================================================
+// status/media-css.html 인라인 스타일 추출
+// =============================================================================
+.runtime-label {
+    position: relative;
+    white-space: nowrap;
+}
+.tooltipped:after { text-align: left; }
+td.ping { white-space: nowrap; }
+
+// =============================================================================
+// status/judge-status.html 인라인 스타일 추출
+// =============================================================================
+body:has(#judge-status) {
+    .h-scrollable-table { overflow: visible; }
+}
+
+#judge-status {
+    border-radius: 10px 10px 0 0;
+    box-shadow: var(--standard-box-shadow);
+
+    thead th {
+        height: 25px;
+        background-color: rgba(0, 0, 0, 0.03);
+        color: #17171B;
+        border: none;
+        padding: 7px 10px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    tbody tr, tbody td {
+        height: 25px;
+        background-color: #D9D9D908;
+        border: none !important;
+        border-top: 1px solid var(--border-color);
+    }
+
+    tbody td:first-child a { color: var(--primary-color); }
+    tbody tr:nth-child(even) { background: none; }
+    tbody tr:nth-child(odd) { background-color: #ffffff; }
+    th:first-child { border-top-left-radius: 10px; }
+    th:last-child { border-top-right-radius: 10px; }
+}
+
+// =============================================================================
+// status/language-list.html 인라인 스타일 추출
+// =============================================================================
+body:has(.page-status-runtimes) {
+    .h-scrollable-table { overflow: visible; }
+
+    .table {
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+        box-shadow: var(--standard-box-shadow);
+        text-align: center;
+        margin: 0 auto;
+
+        thead th {
+            height: 25px;
+            background-color: rgba(0, 0, 0, 0.03);
+            color: #17171B;
+            text-align: center;
+            border: none;
+            padding: 7px 10px !important;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        th:first-child { border-top-left-radius: 10px !important; }
+        th:last-child { border-top-right-radius: 10px !important; }
+        tbody tr { height: 25px; text-align: center; }
+        tbody td { border: none; padding: 7px 10px !important; }
+        td.language { white-space: nowrap; }
+        td.info { width: 100%; }
+        td.info .content-description { margin: -1em 1em -1em 1em; }
+        tbody tr:nth-child(odd) { background-color: #ffffff; }
+        &.striped tr:nth-child(even) { background: none; }
+    }
+}
+
+// =============================================================================
+// status/versions.html 인라인 스타일 추출
+// =============================================================================
+body:has(#judge-versions) {
+    #content-body {
+        padding-bottom: 0;
+        overflow-y: scroll;
+        margin-top: 16px !important;
+        box-shadow: var(--standard-box-shadow);
+    }
+
+    .table tbody:first-child { border: none; }
+    .table tbody tr:nth-child(even) th { background-color: rgba(0, 0, 0, 0.02); }
+}

@@ -199,6 +199,64 @@ a.view-pdf {
   display: inline-block;
 }
 
+.content-description {
+  font-size: 1.2em;
+  font-family: "Pretendard", "Segoe UI", "Lucida Grande", Arial, sans-serif;
+  color: #373D47;
+}
+.content-description p {
+  color: #373D47;
+}
+.content-description h1, .content-description h2, .content-description h3, .content-description h4, .content-description h5, .content-description h6 {
+  color: #373D47;
+}
+.content-description h4 {
+  font-size: 18px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #373D47;
+}
+.content-description pre, .content-description code, .content-description kbd, .content-description samp, .content-description span.code {
+  color: #000;
+}
+.content-description code, .content-description span.code {
+  border-color: #ccc;
+  background-color: #f8f8f8;
+  color: #3b3b3b;
+}
+.content-description pre {
+  border-color: #ccc;
+  background-color: #f8f8f8;
+  color: #000;
+  position: relative;
+}
+
+.copy-btn-overlay {
+  position: absolute;
+  top: 35px;
+  right: 2px;
+  border: none;
+  background: none;
+  color: #6c757d;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  z-index: 10;
+}
+.copy-btn-overlay:hover {
+  background: none;
+  color: #17171B;
+}
+
+#content-bg {
+  width: 100vw;
+  height: 300px;
+  background: linear-gradient(180deg, #5C95D9 0%, #9FCDF2 300%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 .problem-title {
   display: -webkit-box;
   display: -webkit-flex;

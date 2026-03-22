@@ -192,3 +192,127 @@ a {
         transform: translatez(0);
     }
 }
+
+// =============================================================================
+// 댓글 목록 (comments/list.html 인라인 <style>에서 추출)
+// =============================================================================
+
+#comments {
+    display: none;
+}
+
+.comment-post-wrapper {
+    width: 100%;
+    margin-right: 10px;
+}
+
+.form-area.comment-submit {
+    padding: 10px;
+    margin: 0;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    background: none;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.new-comments .comment-display {
+    display: flex;
+    padding-left: 1em;
+    padding-top: 0.5em !important;
+    border: 1px solid;
+    border-color: #fff #fff var(--border-color) #fff;
+    border-radius: 0;
+    background: none;
+    justify-content: space-between;
+    flex: 1;
+}
+
+img.user-gravatar {
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    width: 100%;
+    margin-top: 0;
+}
+
+.new-comments .comment .detail .header {
+    border-bottom: none;
+    margin-top: 10px;
+
+    span { font-size: 16px; }
+
+    .time-with-rel {
+        font-size: 12px;
+        margin: 4px;
+    }
+}
+
+.comment-submit-form {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.wmd-input {
+    height: 80px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+
+    &:hover {
+        border: 1px solid var(--border-color);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    }
+
+    &:focus {
+        box-shadow: none;
+        border-color: #9FCDF2;
+        outline: 0;
+    }
+}
+
+.comment-area {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    margin-top: 32px;
+}
+
+.comment-submit-button {
+    background-color: #D9D9D938;
+    border: 1px solid var(--border-color);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-tag {
+    background-color: #D9D9D969;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    width: 100%;
+    margin-right: 10px;
+
+    i { margin-left: 20px; }
+}
+
+.comment-score { margin: 8px 0; }
+.vote { padding-top: 0; }
+.info { padding-bottom: 0.5em; }
+
+.issue-report {
+    padding: 10px 30px;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+.comment-header-space { height: 10px; }
+
+.content-description p { margin: 3px 0 !important; }

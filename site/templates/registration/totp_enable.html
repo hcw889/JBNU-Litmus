@@ -1,50 +1,6 @@
 {% extends "common-content.html" %}
 
-{% block media %}
-    <style>
-        .inline-header {
-            font-size: 1.1em;
-            padding: 4px 8px;
-            padding-left: 0;
-        }
-
-        .block-header {
-            font-size: 1.1em;
-        }
-
-        .block-header:first-of-type {
-            padding-top: 0.5em;
-        }
-
-        #totp-enable-form {
-            border: none;
-            background: none;
-            max-width: 700px;
-        }
-
-        .totp-qr-code img, .totp-qr-code canvas {
-            width: 400px;
-            max-width: 100%;
-            margin: 0 auto;
-            display: block;
-            -ms-interpolation-mode: nearest-neighbor;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: -webkit-crisp-edges;
-            image-rendering: -o-crisp-edges;
-            image-rendering: pixelated;
-            image-rendering: -moz-crisp-edges;
-            image-rendering: crisp-edges;
-        }
-
-        code.totp-code {
-            user-select: all;
-        }
-
-        .scratch-codes {
-            white-space: pre-line;
-        }
-    </style>
-{% endblock %}
+{% block media %}{% endblock %}
 
 {% block content_js_media %}
     <script>

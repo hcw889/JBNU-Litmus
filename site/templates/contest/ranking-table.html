@@ -2,14 +2,6 @@
 {% block container %}
 <!-- 아무것도 안 넣어서 기본 container 블럭 무시 -->
 {% endblock %}
-<style>
-/* contest ranking에서만 테이블 레이아웃 고정 */
-.contest-ranking .users-table,
-#users-table {
-    table-layout: fixed;
-}
-
-</style>
 
 {% block after_rank_head %}
     {% if has_rating %}

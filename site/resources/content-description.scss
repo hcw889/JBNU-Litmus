@@ -60,6 +60,82 @@ a.view-pdf {
     display: inline-block;
 }
 
+// =============================================================================
+// common-content.html 인라인 <style>에서 추출한 스타일
+// (base-description 믹스인 오버라이드 + 신규 컴포넌트)
+// =============================================================================
+
+// --- .content-description 오버라이드 ---
+
+.content-description {
+    font-size: 1.2em;
+    font-family: "Pretendard", "Segoe UI", "Lucida Grande", Arial, sans-serif;
+    color: #373D47;
+
+    p {
+        color: #373D47;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #373D47;
+    }
+
+    h4 {
+        font-size: 18px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        color: #373D47;
+    }
+
+    pre, code, kbd, samp, span.code {
+        color: #000;
+    }
+
+    code, span.code {
+        border-color: #ccc;
+        background-color: #f8f8f8;
+        color: #3b3b3b;
+    }
+
+    pre {
+        border-color: #ccc;
+        background-color: #f8f8f8;
+        color: #000;
+        position: relative;
+    }
+}
+
+// --- 코드 복사 버튼 ---
+
+.copy-btn-overlay {
+    position: absolute;
+    top: 35px;
+    right: 2px;
+    border: none;
+    background: none;
+    color: #6c757d;
+    cursor: pointer;
+    font-size: 14px;
+    transition: color 0.3s ease;
+    z-index: 10;
+
+    &:hover {
+        background: none;
+        color: #17171B;
+    }
+}
+
+// --- 배경 그라디언트 (#content-bg) ---
+
+#content-bg {
+    width: 100vw;
+    height: 300px;
+    background: linear-gradient(180deg, #5C95D9 0%, #9FCDF2 300%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 .problem-title {
     display: -webkit-box;
     display: -webkit-flex;

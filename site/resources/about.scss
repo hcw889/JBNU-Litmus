@@ -1,0 +1,281 @@
+// =============================================================================
+// about/about.html 인라인 스타일 추출
+// =============================================================================
+body:has(.litmus-info) {
+    #page-container { background: #FFF !important; }
+    footer { background: #FFF !important; margin-top: 30px; }
+    #content { margin: 50px auto 0; width: 1040px; }
+    .footer-content { text-align: center; color: #808080; }
+    .title-div { display: none; }
+    .litmus-info { margin-top: 50px; }
+    .text { font-size: 16px; }
+    .margin { padding: 5px; }
+
+    .info {
+        color: #8391A1;
+        font-size: 16px;
+    }
+
+    .title h1 {
+        font-weight: 600;
+        font-size: 60px;
+        margin: 100px 0 25px;
+        letter-spacing: -1.5px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        letter-spacing: -0.5px;
+    }
+
+    .dev-team {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 990px;
+        border-radius: 30px;
+        background-color: #D9D9D93D;
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .year {
+        color: #5C95D9;
+        font-weight: 700;
+        font-size: 18px;
+        padding: 0 45px;
+    }
+
+    .team-members {
+        font-size: 16px;
+        font-weight: 700;
+        padding: 0 60px;
+    }
+
+    .menu h3 {
+        width: 620px;
+        text-align: center;
+        color: #5C95D9;
+        font-weight: 700;
+        font-size: 18px;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    .faculty-info {
+        display: flex;
+        margin-bottom: 25px;
+    }
+
+    .faculty-leader, .faculty-advisor {
+        font-size: 16px;
+        margin-right: 40px;
+    }
+
+    .version { margin-bottom: 20px; }
+
+    .version2 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .info2 {
+        width: 620px;
+        margin: 0 auto;
+        font-size: 17px;
+        font-weight: 500;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .subinfo {
+        width: 620px;
+        margin: 0 auto;
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: center;
+        color: #8391A1;
+    }
+
+    .info2 a, .subinfo a {
+        color: #5C95D9;
+        text-decoration: none;
+        &:hover { text-decoration: underline; }
+    }
+
+    .project-info-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+
+    .info-card {
+        display: flex;
+        flex-direction: column;
+        width: 210px;
+    }
+
+    .card-header {
+        color: #5C95D9;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    .card-content {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        background: #FFFFFF;
+        min-width: 180px;
+        transition: background 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            background: #FAFAFA;
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .icon {
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
+        color: white;
+        background: #5C95D9;
+        border: 5px solid #5C95D9;
+        border-radius: 10px;
+        padding: 1px;
+    }
+
+    .material-symbols-outlined {
+        background: #5C95D9;
+        border: 5px solid #5C95D9;
+        border-radius: 10px;
+        text-align: left;
+        color: #FFFFFF;
+    }
+
+    .button-container {
+        display: flex;
+        gap: 20px;
+    }
+
+    .team-info {
+        margin-top: 100px;
+
+        h3 {
+            text-align: left;
+            color: #5C95D9;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+    }
+
+    details.update-note {
+        background-color: #f9f9f9;
+        border: none;
+        border-radius: 8px;
+        margin-top: 20px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 0;
+
+        summary {
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 15px;
+            text-align: left;
+            transition: background-color 0.3s ease;
+            position: relative;
+            border-radius: 8px;
+            list-style: none;
+
+            &:hover { background-color: #e9ecef; }
+            &::-webkit-details-marker { display: none !important; }
+            &::marker { display: none; content: ''; }
+
+            &::before {
+                content: "▸";
+                display: inline-block;
+                margin-right: 8px;
+                transition: transform 0.3s ease;
+                color: #5C95D9;
+                font-weight: bold;
+                font-size: 14px;
+            }
+        }
+
+        &[open] summary::before { transform: rotate(90deg); }
+
+        .update-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
+            padding: 0 15px;
+            text-align: left;
+
+            h4 {
+                margin: 20px 0 10px;
+                color: #5C95D9;
+                font-size: 18px;
+                font-weight: 600;
+                &:first-child { margin-top: 10px; }
+            }
+
+            ul {
+                padding-left: 20px;
+                list-style: disc;
+                font-size: 14px;
+                margin: 5px 0;
+            }
+
+            li { margin-bottom: 5px; }
+        }
+
+        &[open] .update-content {
+            max-height: 2000px;
+            opacity: 1;
+            padding: 0 15px 10px 15px !important;
+        }
+    }
+
+    .patch-note-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .menu {
+            width: 620px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .no-patch-note {
+        text-align: center;
+        padding: 20px;
+        color: #6c757d;
+        font-style: italic;
+
+        p { margin: 0; font-size: 16px; }
+    }
+}

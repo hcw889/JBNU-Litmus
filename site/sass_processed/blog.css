@@ -112,4 +112,104 @@
   text-align: center;
 }
 
+body:has(#blog-container) #page-container {
+  background: #FFF;
+}
+body:has(#blog-container) footer {
+  background: #FFF !important;
+  position: absolute;
+  bottom: 0;
+}
+body:has(#blog-container) #blog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+}
+body:has(#blog-container) .blog-main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 20px;
+}
+body:has(#blog-container) .left-top {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 10px;
+  padding-top: 0;
+  box-sizing: border-box;
+}
+body:has(#blog-container) .right-top {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 5px;
+  padding: 10px;
+  padding-top: 0;
+  box-sizing: border-box;
+}
+body:has(#blog-container) .top-item {
+  font-size: 50px;
+  font-weight: 600;
+}
+body:has(#blog-container) .right {
+  font-size: 20px;
+  text-align: right;
+}
+body:has(#blog-container) .blue {
+  color: #5C95D9;
+}
+body:has(#blog-container) .bottom img {
+  max-width: 100%;
+}
+body:has(#blog-container) .bottom .alarm {
+  background-color: #EBF0F8;
+  padding: 5px 12px;
+  border-radius: 4px;
+  transition: color 0.3s ease;
+}
+body:has(#blog-container) .bottom .alarm:hover {
+  color: #2f5da8;
+}
+body:has(#blog-container) #mobile.tabs {
+  display: none;
+}
+body:has(#blog-container) .alarm {
+  color: var(--font-basic-black);
+  transition: color 0.2s;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+body:has(#blog-container) .alarm:hover {
+  color: var(--primary-hover-color);
+}
+body:has(#blog-container) .notice-urgent {
+  background-color: #ffe3e3;
+  color: black !important;
+  padding: 7px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  border: 1px solid #ffa8a8;
+  cursor: default;
+  margin-bottom: 10px;
+  text-align: left;
+}
+body:has(#blog-container) .notice-alert {
+  background-color: #fff9c4;
+  color: black !important;
+  padding: 7px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  border: 1px solid #fce51c;
+  cursor: default;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
 /*# sourceMappingURL=blog.css.map */

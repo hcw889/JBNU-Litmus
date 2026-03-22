@@ -43,4 +43,119 @@
   color: black;
 }
 
+.runtime-label {
+  position: relative;
+  white-space: nowrap;
+}
+
+.tooltipped:after {
+  text-align: left;
+}
+
+td.ping {
+  white-space: nowrap;
+}
+
+body:has(#judge-status) .h-scrollable-table {
+  overflow: visible;
+}
+
+#judge-status {
+  border-radius: 10px 10px 0 0;
+  box-shadow: var(--standard-box-shadow);
+}
+#judge-status thead th {
+  height: 25px;
+  background-color: rgba(0, 0, 0, 0.03);
+  color: #17171B;
+  border: none;
+  padding: 7px 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+#judge-status tbody tr, #judge-status tbody td {
+  height: 25px;
+  background-color: rgba(217, 217, 217, 0.031372549);
+  border: none !important;
+  border-top: 1px solid var(--border-color);
+}
+#judge-status tbody td:first-child a {
+  color: var(--primary-color);
+}
+#judge-status tbody tr:nth-child(even) {
+  background: none;
+}
+#judge-status tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+#judge-status th:first-child {
+  border-top-left-radius: 10px;
+}
+#judge-status th:last-child {
+  border-top-right-radius: 10px;
+}
+
+body:has(.page-status-runtimes) .h-scrollable-table {
+  overflow: visible;
+}
+body:has(.page-status-runtimes) .table {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  box-shadow: var(--standard-box-shadow);
+  text-align: center;
+  margin: 0 auto;
+}
+body:has(.page-status-runtimes) .table thead th {
+  height: 25px;
+  background-color: rgba(0, 0, 0, 0.03);
+  color: #17171B;
+  text-align: center;
+  border: none;
+  padding: 7px 10px !important;
+  font-size: 14px;
+  font-weight: 400;
+}
+body:has(.page-status-runtimes) .table th:first-child {
+  border-top-left-radius: 10px !important;
+}
+body:has(.page-status-runtimes) .table th:last-child {
+  border-top-right-radius: 10px !important;
+}
+body:has(.page-status-runtimes) .table tbody tr {
+  height: 25px;
+  text-align: center;
+}
+body:has(.page-status-runtimes) .table tbody td {
+  border: none;
+  padding: 7px 10px !important;
+}
+body:has(.page-status-runtimes) .table td.language {
+  white-space: nowrap;
+}
+body:has(.page-status-runtimes) .table td.info {
+  width: 100%;
+}
+body:has(.page-status-runtimes) .table td.info .content-description {
+  margin: -1em 1em -1em 1em;
+}
+body:has(.page-status-runtimes) .table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+body:has(.page-status-runtimes) .table.striped tr:nth-child(even) {
+  background: none;
+}
+
+body:has(#judge-versions) #content-body {
+  padding-bottom: 0;
+  overflow-y: scroll;
+  margin-top: 16px !important;
+  box-shadow: var(--standard-box-shadow);
+}
+body:has(#judge-versions) .table tbody:first-child {
+  border: none;
+}
+body:has(#judge-versions) .table tbody tr:nth-child(even) th {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
 /*# sourceMappingURL=status.css.map */

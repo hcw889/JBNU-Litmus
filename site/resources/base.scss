@@ -96,26 +96,7 @@ div.info-float {
     padding: 10px;
 }
 
-footer {
-    color: $color_primary50;
-    display: block;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-}
-
-body {
-    position: relative;
-    min-height: 100%;
-    margin: 0 auto;
-    max-width: 107em;
-    font-size: $base_font_size;
-    line-height: 1.231;
-    background: $color_primary5;
-    font-family: "Segoe UI", "Lucida Grande", Arial, sans-serif;
-    color: $color_primary100;
-    height: 100%;
-}
+// footer, body → base-layout.scss로 이동됨
 
 .unselectable {
     cursor: default;
@@ -155,30 +136,7 @@ h4 {
     margin: 0;
 }
 
-hr {
-    color: rgba(0, 0, 0, 0.2);
-}
-
-#content {
-    margin: 52px auto auto;
-
-    // Header
-    width: 90%;
-    height: 100%;
-    min-height: 25em;
-    display: block;
-
-    .title {
-        color: $color_primary75;
-    }
-}
-
-footer {
-    text-align: center;
-    height: 40px;
-    border-top: 1px solid $color_primary25;
-    background: $color_primary10;
-}
+// hr(2차), #content, footer(2차) → base-layout.scss로 이동됨
 
 html {
     position: relative;
@@ -240,58 +198,7 @@ noscript #noscript {
     }
 }
 
-#form-errors, .form-errors {
-    background: rgba(255, 0, 0, 0.3);
-    border: 3px solid red;
-    border-radius: $widget_border_radius;
-    padding: 0 1em 0.1em 1em;
-    margin: 0.3em 0 0.5em 0;
-}
-
-#contest-info {
-    font-size: 1.25em;
-    border: 5px solid $highlight_blue;
-    border-left: 5px dotted white;
-    border-radius: 0 $widget_border_radius $widget_border_radius 0;
-    background: rgba(0, 0, 0, 0.77);
-    z-index: 100000;
-    padding: 10px 12px;
-    color: white;
-    cursor: move;
-    position: fixed;
-    left: 20px;
-    top: 90%;
-    display: none;
-
-    a {
-        height: 1.4em;
-        padding: 0;
-        margin: 0;
-        color: white;
-        display: block;
-    }
-}
-
-#contest-time-remaining {
-    display: inline-block;
-}
-
-#page-container {
-    min-height: 100%;
-    position: relative;
-    margin: 0 auto;
-    border-right: 1px solid $color_primary25;
-    border-left: 1px solid $color_primary25;
-    background: $color_pageBg;
-}
-
-// border-bottom: 1px solid rgb(204, 204, 204)
-// border-bottom-left-radius: 4px
-// border-bottom-right-radius: 4px
-
-#content-body {
-    padding-bottom: 4em;
-}
+// #form-errors, #contest-info, #page-container, #content-body → base-layout.scss로 이동됨
 
 // Offset the footer
 
@@ -310,32 +217,4 @@ math {
     }
 }
 
-@media(max-width: 1498px) {
-    #page-container {
-        border-left: none;
-        border-right: none;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-}
-
-@media (max-width: 830px) {
-    #content {
-        width: auto;
-        padding: 0 5px;
-    }
-    // #nav-list li:not(.home-nav-element):not(.user-nav-element) {
-    //     display: none;
-    // }
-
-    #nav-list {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    #user-links {
-        display: inline-flex;
-        align-items: center;
-    }
-}
+// @media 1498px, 830px → base-layout.scss로 이동됨

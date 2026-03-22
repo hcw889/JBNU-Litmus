@@ -10,8 +10,9 @@
     }
 
     .version-latest {
-        background: #af3c;
-        color: black;
+        background-color: #FFFFFF;
+        color: #17171B;
+        border: none;
     }
 
     .version-outdated {
@@ -21,8 +22,21 @@
 
     tr:first-child {
         position: sticky;
-        top: 43px;
+        top: 0;
     }
+
+    tr { border-radius: 0; }
+    tr th { background-color: rgba(0, 0, 0, 0.02); }
+    th {
+        color: #17171B;
+        font-weight: 400;
+        font-size: 14px;
+        background-color: #FFFFFF;
+        border: none;
+    }
+
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 0;
 }
 
 .django-as-table {
@@ -55,4 +69,12 @@
     justify-content: center;
     align-content: center;
     padding-top: 5%;
+}
+
+// =============================================================================
+// list-pages.html 인라인 스타일 추출
+// =============================================================================
+.pagination {
+    .page-arrow i { font-size: 14px; }
+    .disabled-page .page-arrow i { opacity: 0.5; }
 }

@@ -303,3 +303,735 @@ ul.problem-list {
         font-size: 13px;
     }
 }
+
+// =============================================================================
+// 문제 상세 페이지 (problem/problem.html 인라인 <style>에서 추출)
+// =============================================================================
+
+// 문제 상세 페이지 배경 오버라이드
+body:has(.problem-title) {
+    #common-content { background: #FFF; }
+    #page-container { background: #FFF !important; }
+    footer { background: #FFF !important; }
+    #content-bg { display: none; }
+}
+
+// 문제 제목 영역
+.problem-title {
+    width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.title-state {
+    font-size: 2em;
+    float: left;
+    width: 1.1em;
+    display: block;
+    margin-top: 0;
+}
+
+// 사이드바 (info-float)
+.info-float {
+    a { vertical-align: middle; }
+    .fa {
+        color: rgb(159, 202, 242);
+        padding-right: 0.2em;
+    }
+}
+
+#content-right .info-float {
+    float: none;
+    padding: 0;
+    position: sticky;
+    top: 70px;
+    width: 100%;
+    border: none;
+}
+
+.info-float-div {
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: var(--standard-box-shadow);
+}
+
+.info-float-div-admin {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: var(--standard-box-shadow);
+}
+
+.admin-tool {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+// 정오 공지
+.problem-clarification {
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+
+    .time {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .body {
+        display: inline-block;
+        padding-left: 3em;
+    }
+}
+
+.clarifications-area h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+// 관리자 버튼
+.admin-btn.button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    height: auto;
+    text-decoration: none !important;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: 400;
+    line-height: 1.3;
+    padding: 6px 12px !important;
+    border: none;
+    font-size: 14px;
+    color: var(--font-dark-grey);
+    background: #fff;
+    border-radius: 10px;
+    gap: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        color: var(--font-dark-grey);
+        background: #D9D9D936;
+    }
+}
+
+// 문제 정보 레이블
+.pi-name {
+    font-weight: normal;
+    margin-left: 6px;
+    margin-right: 3px;
+}
+
+.pi-link {
+    text-decoration: underline;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.button-font {
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17.5px;
+    text-align: center;
+    color: #8391A1;
+}
+
+// 문제 상세 레이아웃
+body:has(.problem-title) {
+    #content {
+        background: #fff;
+        width: 70%;
+    }
+
+    #content-body { display: flex; flex-direction: column; }
+
+    #content-left {
+        padding: 0;
+        margin: 0;
+        margin-top: 10px;
+        margin-right: 20px;
+    }
+
+    #content-right { padding: 0; margin: 0; }
+
+    #content hr { display: none; }
+}
+
+.problem-info-entry {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.problem-description { width: 100%; }
+
+// SVG 상태 아이콘
+.solved-problem-icon,
+.attempted-problem-icon,
+.lock-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.icon-div svg {
+    padding-top: 3px;
+    margin-right: 5px;
+}
+
+.solved-problem-icon { fill: #94D95C; stroke: #94D95C; }
+.attempted-problem-icon { fill: #ffa500; stroke: #ffa500; }
+.lock-icon { fill: #7e7e7e; stroke: #7e7e7e; margin-right: 5px; }
+.attempted-problem-color { color: #D95C5C; }
+
+// 사이드바 메뉴 제목
+.floating-menu-title {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10px;
+    background-color: rgba(217, 217, 217, 0.3);
+    margin-bottom: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.floating-menu-title-admin {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-radius: 10px;
+    background-color: rgba(92, 149, 217, 0.1);
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.inner-contents {
+    width: 100%;
+    padding-left: 12px;
+}
+
+// 문제 본문 내 코드 블록 오버라이드
+.content-description h4 { border-bottom: 1px solid rgba(0, 0, 0, 0.07) !important; }
+.copy-clipboard { margin-top: 0 !important; }
+.content-description pre {
+    border: none !important;
+    margin-top: 0 !important;
+    box-shadow: var(--standard-box-shadow);
+}
+
+.btn-clipboard {
+    border: none;
+    background: none;
+    transition: color 0.3s ease;
+    &:hover { color: #17171B; }
+}
+
+// =============================================================================
+// problem/clone.html
+// =============================================================================
+body:has(#problem-clone-panel) {
+    #page-container { background: #FFF !important; }
+    footer { background: #FFF !important; }
+}
+
+#problem-clone-panel {
+    position: relative;
+    margin: 5em auto auto -10em;
+    top: 40%;
+    left: 50%;
+}
+
+#problem-code-container { margin: 0.5em 0; }
+#id_code { width: 100%; }
+
+// =============================================================================
+// problem/data.html
+// =============================================================================
+body:has(#case-table) {
+    button, input[type=submit] {
+        margin-left: auto;
+        background: none;
+        border: 1px solid var(--primary-hover-color);
+        background-color: var(--primary-hover-color);
+        color: #fff;
+        font-size: 14px;
+        border-radius: 10px;
+        margin-top: -18px;
+
+        &:hover { background-color: #5288C8; color: #FAFAFA; }
+    }
+
+    .title-div {
+        width: 1040px;
+        margin: auto;
+
+        h2.title { font-weight: 700; padding-top: 35px; }
+        p.title-info { color: rgb(128, 128, 128); font-size: 16px; margin: 0; margin-top: auto; }
+    }
+
+    .title-area div { padding-bottom: 30px; }
+
+    .title-line-action {
+        margin-bottom: 5px;
+
+        .action-link {
+            padding-left: 5px;
+            &:hover { text-decoration: underline; }
+        }
+    }
+}
+
+#case-table .select2 { text-align: initial; }
+.order-column { width: 1em; }
+.bad-file input, .bad-file .select2-selection { border-color: red; }
+span.order { padding-right: 0.5em; }
+
+body.dragging, body.dragging * { cursor: move !important; }
+
+.dragged { position: absolute; opacity: 0.5; z-index: 2000; }
+
+tr.placeholder {
+    display: block;
+    background: red;
+    position: relative;
+    margin: 0; padding: 0; border: none;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 0; height: 0;
+        border: 5px solid transparent;
+        border-left-color: red;
+        margin-top: -5px;
+        left: -5px;
+        border-right: none;
+    }
+}
+
+i.fa-ellipsis-v { cursor: move; }
+
+.edit-generator-args { position: relative; }
+
+.generator-args-editor {
+    textarea { display: block; width: 100%; margin-bottom: 0.5em; height: 8em; }
+    .button { display: block; float: right; }
+}
+
+#case-table tbody td { white-space: nowrap; }
+.type-column { width: 8em; }
+
+#id_problem-data-zipfile, #id_problem-data-generator { display: none; }
+
+.custom-file-upload-zipfile,
+.custom-file-upload-generator {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        color: var(--primary-hover-color);
+        background-color: var(--hover-background-color);
+    }
+}
+
+.file-selected {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 5px 10px;
+
+    .file-icon { margin-right: 10px; font-size: 20px; }
+    #file-name-display { margin-right: 10px; font-size: 14px; color: #333; }
+    .remove-file { cursor: pointer; color: #999; margin-left: 10px; font-size: 14px;
+        &:hover { color: #000; }
+    }
+}
+
+.far.fa-folder { margin-right: 10px; color: #5C95D9; }
+
+#id_problem-data-unicode,
+#id_problem-data-nobigmath,
+#id_problem-data-checker {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--font-basic-black);
+    cursor: pointer;
+    width: auto;
+    transition: all 0.3s ease;
+
+    &:focus { border-color: var(--secondary-color); outline: none; }
+
+    option {
+        padding: 10px;
+        background-color: white;
+        color: var(--font-basic-black);
+    }
+}
+
+#add-case-row:hover { text-decoration: underline; }
+
+// data.html 테이블 스타일
+body:has(#case-table) .table {
+    border-radius: 10px;
+    margin-top: 20px;
+
+    tr:first-child th:first-child { border-top-left-radius: 10px; }
+    tr:first-child th:last-child  { border-top-right-radius: 10px; }
+
+    th {
+        background: white;
+        color: var(--font-dark-grey);
+        font-weight: 400;
+        font-size: 16px;
+        width: 400px;
+        border-color: var(--border-color);
+    }
+
+    td {
+        color: var(--font-dark-grey);
+        background-color: white;
+        border-color: var(--border-color);
+    }
+}
+
+// =============================================================================
+// problem/editorial.html
+// =============================================================================
+.content-description {
+    h5 { margin-top: 20px; }
+
+    .copy-btn-overlay {
+        position: absolute;
+        top: 5px;
+        right: 2px;
+        bottom: auto;
+        color: #6c757d;
+        background: none;
+        border: none;
+
+        &:hover { background: none; color: #17171B; }
+    }
+}
+
+.alert-danger {
+    border: none;
+    box-shadow: var(--standard-box-shadow);
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+// =============================================================================
+// problem/list.html
+// =============================================================================
+body:has(#problem-table) {
+    #content {
+        width: 70%;
+        margin-bottom: 4em;
+
+        @media screen and (max-width: 1200px) {
+            width: 95%;
+        }
+    }
+
+    .content-body-box { background-color: #f9fafb; }
+
+    #content-body { padding-bottom: 0; }
+
+    #common-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    #content-top { display: flex; width: 100%; }
+
+    #content-bottom {
+        display: flex;
+        flex: none;
+        padding-left: 0;
+        z-index: 0;
+        gap: 20px;
+    }
+}
+
+.h-scrollable-table { width: 100%; overflow: visible; }
+
+.table-div {
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    margin: 0 auto;
+    box-shadow: var(--standard-box-shadow);
+    border-radius: 10px;
+}
+
+#problem-table {
+    box-sizing: border-box;
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 0;
+
+    td { padding: 0; }
+    td.problem { width: 80%; padding: 0; height: 45px; padding-left: 10px; }
+    .problem { text-align: left; }
+    tbody tr { height: 25px; }
+
+    th, td {
+        width: 10%;
+        border: none;
+        border-radius: 0;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    td.users { text-align: center; }
+
+    th {
+        height: 50px;
+        border: none;
+        padding: 0;
+        font-weight: normal;
+        position: relative;
+        background: rgba(0, 0, 0, 0.03);
+
+        a {
+            color: #17171B;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .sort-icon {
+            font-size: 12px;
+            font-weight: normal;
+            color: #17171B;
+            margin-left: 3px;
+            cursor: pointer;
+        }
+    }
+
+    a:hover { text-decoration: underline; }
+}
+
+.table.striped tr:nth-child(even) { background: rgba(0, 0, 0, 0.02); }
+
+.table tr:first-child th:first-child { border-top-left-radius: 10px !important; }
+.table tr:first-child th:last-child  { border-top-right-radius: 10px !important; }
+
+.problem-status {
+    display: flex;
+    align-items: center;
+
+    span { margin-left: 8px; }
+}
+
+.solved-problem-icon   { fill: #94D95C; stroke: #94D95C; }
+.wrong-problem-icon    { fill: #D95C5C; stroke: #D95C5C; }
+.attempted-problem-icon { fill: #ffa500; stroke: #ffa500; }
+.unsolved-problem-icon { fill: #D95C5C; stroke: #D95C5C; }
+.lock-icon             { fill: #D9D9D9; stroke: #D9D9D9; }
+
+@font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    font-weight: 400;
+    src: url(/static/fonts/material-symbols/MaterialSymbolsOutlined.woff2) format('woff2');
+}
+
+.folder-toggle::before {
+    font-family: 'Material Symbols Outlined';
+    content: '\e2c8';
+    margin-right: 10px;
+    font-size: 20px;
+    color: #D9D9D9;
+    display: inline-block;
+}
+
+#problem-group li.active > span.folder-toggle::before { content: '\e2c7'; color: #5C95D9; }
+
+#problem-group li span.all-problems::before {
+    font-family: 'Material Symbols Outlined';
+    content: '\e896';
+    margin-right: 10px;
+    font-size: 20px;
+    color: #D9D9D9;
+    display: inline-block;
+}
+
+#problem-group li.active > span.all-problems::before { color: #5C95D9; }
+
+#problem-group {
+    width: 200px;
+    border-radius: 10px;
+
+    > ul { list-style-type: none; padding-left: 0; margin: 0; }
+
+    li {
+        cursor: pointer;
+        margin-bottom: 5px;
+    }
+
+    li span {
+        width: auto;
+        min-width: 120px;
+        max-width: 180px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: background-color 0.2s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 16px;
+        color: #8391A1;
+
+        &:hover { background-color: #D9D9D936; }
+    }
+
+    li.active > span {
+        background-color: #D9D9D936;
+        color: #373D47;
+    }
+
+    li ul {
+        margin-top: 5px;
+        padding-left: 15px;
+        list-style-type: none;
+    }
+}
+
+.filter-form-group button {
+    width: 75px;
+    height: 30px;
+    line-height: 2;
+    padding: 0 !important;
+    background-color: #5C95D9;
+    display: flex;
+    justify-content: center;
+}
+
+// =============================================================================
+// problem/search-form.html (문제 목록 검색/필터)
+// =============================================================================
+.h3-title {
+    min-width: 25px;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    color: #495057;
+    margin-right: 10px;
+}
+
+#filter-form {
+    display: flex;
+    min-width: 500px;
+    width: 100%;
+    margin: 0 0 10px;
+
+    input {
+        height: 35px;
+        margin-bottom: 0;
+        padding: 0 0 0 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border: none;
+        transition: box-shadow 0.2s ease;
+
+        &:hover { box-shadow: 0 4px 6px rgba(82, 168, 236, 0.15); }
+        &::placeholder { color: var(--font-grey); font-size: 14px; }
+    }
+}
+
+.apply-btn {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #D9D9D94D;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 500;
+    color: #8391A1;
+
+    &.active {
+        background-color: #5C95D9 !important;
+        color: #FFFFFF;
+    }
+}
+
+// =============================================================================
+// problem/manage_submission.html
+// =============================================================================
+.pane {
+    display: block;
+    max-width: 20em;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+
+    h3 {
+        display: block;
+        background: #3b3b3b;
+        padding: 5px 10px 10px;
+        margin: -10px -10px 10px;
+        border-radius: 5px 5px 0 0;
+        color: white;
+    }
+}
+
+.control-group {
+    margin: 1em 0;
+
+    &:not(:first-of-type) {
+        border-top: 1px solid var(--border-color);
+        padding-top: 0.5em;
+    }
+
+    label { display: block; margin-bottom: 0.5em; }
+    select { display: block; width: 100%; }
+}
+
+// =============================================================================
+// problem/submission-diff.html
+// =============================================================================
+body:has(.sub-id) {
+    #content-body { overflow-x: auto; padding-bottom: 0; }
+}
+
+.sub-id       { width: 4em; min-width: 4em; }
+.sub-username { width: 5em; }
+.sub-result   { width: 3em; }
+.sub-language { width: 6em; }
+.sub-date     { min-width: 8em; }
+.sub-case     { min-width: 3em; }
+.sub-case-status { text-decoration: underline; }

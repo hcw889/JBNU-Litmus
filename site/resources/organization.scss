@@ -1,0 +1,179 @@
+// =============================================================================
+// organization/base.html — base-layout.scss 대비 org 전용 오버라이드
+// =============================================================================
+body.org-page {
+    #content {
+        width: 75%;
+        @media screen and (max-width: 1200px) { width: 95%; }
+    }
+
+    #content-body { margin-top: 20px; }
+
+    #nav-container {
+        box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.1);
+        backdrop-filter: none;
+    }
+
+    #nav-list {
+        width: 75%;
+        @media screen and (max-width: 1200px) { width: 95%; }
+    }
+
+    nav ul li ul {
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        border-radius: 0;
+        left: 5px;
+    }
+
+    nav ul li ul li { display: block; }
+
+    nav ul li ul li a, nav ul li ul li button {
+        padding: 8px 20px 8px 8px !important;
+        font-size: 0.8em;
+        line-height: 18px;
+        display: block;
+        border-left: 4px solid var(--primary-color);
+        border-radius: 0;
+        white-space: nowrap;
+        transition: none;
+    }
+
+    #user-links > ul > li > ul {
+        left: 0;
+        right: auto;
+    }
+
+    footer { background-color: #FFF; }
+}
+
+// =============================================================================
+// organization/users.html 인라인 스타일 추출 (첫 번째 style 블록만)
+// =============================================================================
+.kick-form .button { margin: -8px 0; }
+
+form.kick-form a.button { visibility: hidden; }
+
+tr:hover td > form.kick-form a.button { visibility: visible; }
+
+// =============================================================================
+// organization/home.html 인라인 스타일 추출
+// =============================================================================
+.class-list {
+    td { vertical-align: middle; }
+    td:first-child { text-align: left; padding: 0.5em 0.5em 0.5em 1em; }
+    td:last-child { width: 8em; }
+}
+
+.class-description { color: #777; }
+
+body:has(.organization-btn-container) {
+    #page-container {
+        margin-top: 125px;
+        width: 85%;
+        min-height: 80%;
+        box-shadow: 0px 8px 24px 0px #959DA533;
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+    }
+
+    .title-div {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    #content-left { margin-top: 25px; }
+    #footer-content { display: none; }
+}
+
+.button-cont {
+    display: flex;
+    border-radius: 15px;
+    background: #EBEFF3;
+    color: #74A4DE;
+    text-decoration: none;
+    max-height: 35px;
+    justify-content: center;
+    align-items: center;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.8px;
+    text-align: center;
+    padding: 8px 3px;
+    min-width: 109px;
+    margin-left: 5px;
+}
+
+#edit a {
+    color: #74A4DE;
+    text-decoration: none;
+}
+
+#leave {
+    display: block;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 7px 20px;
+    background: transparent;
+    width: fit-content;
+    float: right;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 17.5px;
+    text-align: left;
+    color: #8391A1;
+}
+
+.member-text {
+    margin-left: 5px;
+    color: #8391A1;
+
+    a { color: #8391A1; }
+}
+
+.member-block { display: flex; align-items: center; }
+
+.btn-text { margin-left: 5px; }
+
+.organization-btn-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.organization-btn-container-inner {
+    display: flex;
+    justify-content: right;
+}
+
+// =============================================================================
+// organization/list.html 인라인 스타일 추출
+// =============================================================================
+body:has(#organization-table) {
+    #content { width: 70%; }
+
+    .table {
+        margin-top: 21px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border: 1px solid var(--border-color);
+        overflow: hidden;
+
+        thead th {
+            background-color: #FFFFFF;
+            color: black;
+            border: none;
+            height: 25px;
+        }
+
+        td {
+            border: 1px solid var(--border-color);
+            border-left: none;
+            border-right: none;
+            height: 20px;
+        }
+    }
+}

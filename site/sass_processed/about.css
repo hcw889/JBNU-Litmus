@@ -1,0 +1,280 @@
+@charset "UTF-8";
+body:has(.litmus-info) #page-container {
+  background: #FFF !important;
+}
+body:has(.litmus-info) footer {
+  background: #FFF !important;
+  margin-top: 30px;
+}
+body:has(.litmus-info) #content {
+  margin: 50px auto 0;
+  width: 1040px;
+}
+body:has(.litmus-info) .footer-content {
+  text-align: center;
+  color: #808080;
+}
+body:has(.litmus-info) .title-div {
+  display: none;
+}
+body:has(.litmus-info) .litmus-info {
+  margin-top: 50px;
+}
+body:has(.litmus-info) .text {
+  font-size: 16px;
+}
+body:has(.litmus-info) .margin {
+  padding: 5px;
+}
+body:has(.litmus-info) .info {
+  color: #8391A1;
+  font-size: 16px;
+}
+body:has(.litmus-info) .title h1 {
+  font-weight: 600;
+  font-size: 60px;
+  margin: 100px 0 25px;
+  letter-spacing: -1.5px;
+}
+body:has(.litmus-info) .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+body:has(.litmus-info) .dev-team {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 990px;
+  border-radius: 30px;
+  background-color: rgba(217, 217, 217, 0.2392156863);
+  padding: 15px;
+  margin: 15px 0;
+}
+body:has(.litmus-info) .year {
+  color: #5C95D9;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 0 45px;
+}
+body:has(.litmus-info) .team-members {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 0 60px;
+}
+body:has(.litmus-info) .menu h3 {
+  width: 620px;
+  text-align: center;
+  color: #5C95D9;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+body:has(.litmus-info) .faculty-info {
+  display: flex;
+  margin-bottom: 25px;
+}
+body:has(.litmus-info) .faculty-leader, body:has(.litmus-info) .faculty-advisor {
+  font-size: 16px;
+  margin-right: 40px;
+}
+body:has(.litmus-info) .version {
+  margin-bottom: 20px;
+}
+body:has(.litmus-info) .version2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+body:has(.litmus-info) .info2 {
+  width: 620px;
+  margin: 0 auto;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 10px;
+}
+body:has(.litmus-info) .subinfo {
+  width: 620px;
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  color: #8391A1;
+}
+body:has(.litmus-info) .info2 a, body:has(.litmus-info) .subinfo a {
+  color: #5C95D9;
+  text-decoration: none;
+}
+body:has(.litmus-info) .info2 a:hover, body:has(.litmus-info) .subinfo a:hover {
+  text-decoration: underline;
+}
+body:has(.litmus-info) .project-info-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+body:has(.litmus-info) .info-card {
+  display: flex;
+  flex-direction: column;
+  width: 210px;
+}
+body:has(.litmus-info) .card-header {
+  color: #5C95D9;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: left;
+}
+body:has(.litmus-info) .card-content {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: #FFFFFF;
+  min-width: 180px;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+body:has(.litmus-info) .card-content:hover {
+  background: #FAFAFA;
+  text-decoration: none;
+  color: inherit;
+}
+body:has(.litmus-info) .icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  color: white;
+  background: #5C95D9;
+  border: 5px solid #5C95D9;
+  border-radius: 10px;
+  padding: 1px;
+}
+body:has(.litmus-info) .material-symbols-outlined {
+  background: #5C95D9;
+  border: 5px solid #5C95D9;
+  border-radius: 10px;
+  text-align: left;
+  color: #FFFFFF;
+}
+body:has(.litmus-info) .button-container {
+  display: flex;
+  gap: 20px;
+}
+body:has(.litmus-info) .team-info {
+  margin-top: 100px;
+}
+body:has(.litmus-info) .team-info h3 {
+  text-align: left;
+  color: #5C95D9;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+body:has(.litmus-info) details.update-note {
+  background-color: #f9f9f9;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0;
+}
+body:has(.litmus-info) details.update-note summary {
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 15px;
+  text-align: left;
+  transition: background-color 0.3s ease;
+  position: relative;
+  border-radius: 8px;
+  list-style: none;
+}
+body:has(.litmus-info) details.update-note summary:hover {
+  background-color: #e9ecef;
+}
+body:has(.litmus-info) details.update-note summary::-webkit-details-marker {
+  display: none !important;
+}
+body:has(.litmus-info) details.update-note summary::marker {
+  display: none;
+  content: "";
+}
+body:has(.litmus-info) details.update-note summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+  color: #5C95D9;
+  font-weight: bold;
+  font-size: 14px;
+}
+body:has(.litmus-info) details.update-note[open] summary::before {
+  transform: rotate(90deg);
+}
+body:has(.litmus-info) details.update-note .update-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
+  padding: 0 15px;
+  text-align: left;
+}
+body:has(.litmus-info) details.update-note .update-content h4 {
+  margin: 20px 0 10px;
+  color: #5C95D9;
+  font-size: 18px;
+  font-weight: 600;
+}
+body:has(.litmus-info) details.update-note .update-content h4:first-child {
+  margin-top: 10px;
+}
+body:has(.litmus-info) details.update-note .update-content ul {
+  padding-left: 20px;
+  list-style: disc;
+  font-size: 14px;
+  margin: 5px 0;
+}
+body:has(.litmus-info) details.update-note .update-content li {
+  margin-bottom: 5px;
+}
+body:has(.litmus-info) details.update-note[open] .update-content {
+  max-height: 2000px;
+  opacity: 1;
+  padding: 0 15px 10px 15px !important;
+}
+body:has(.litmus-info) .patch-note-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+body:has(.litmus-info) .patch-note-container .menu {
+  width: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body:has(.litmus-info) .no-patch-note {
+  text-align: center;
+  padding: 20px;
+  color: #6c757d;
+  font-style: italic;
+}
+body:has(.litmus-info) .no-patch-note p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=about.css.map */

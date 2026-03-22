@@ -22,7 +22,7 @@
     float: right;
 }
 
-// Bootstrap-y buttons
+// 버튼 공통 정의 (base-layout.scss, problem.scss 중복 통합)
 .button, button, input[type=submit] {
     color: white;
     text-decoration: none !important;
@@ -31,25 +31,24 @@
     white-space: nowrap;
     font-weight: 400;
     line-height: 1.4;
-    background: rgb(51, 122, 183) none repeat scroll 0 (0% / auto) padding-box border-box;
-    background: -webkit-linear-gradient(top, #337ab7 0, #265a88 100%) repeat-x;
-    background: linear-gradient(to bottom, #337ab7 0, #265a88 100%) repeat-x;
+    background-color: var(--primary-color);
     border-radius: $widget_border_radius;
     padding: 6px 12px;
     display: block;
     border: 1px solid #245580;
     text-align: center;
-
-    // 4k hack
     font-size: $base_font_size;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
-        background: #265a88;
+        background: var(--primary-hover-color);
+        color: var(--white-hover-color);
     }
 
     &:active {
-        border-color: #245580;
-        background: #265a88;
+        background: var(--primary-hover-color);
+        color: var(--white-hover-color);
     }
 
     &.full {
@@ -508,4 +507,20 @@ details {
     background: $color_primary5;
     padding: 5px 10px;
     border-radius: 4px;
+}
+
+// =============================================================================
+// widgets/select_all.html 인라인 스타일 추출
+// =============================================================================
+div.original-checkboxes ul {
+    margin: 0 0 0 2em;
+    padding: 0;
+    list-style-type: none;
+    -moz-columns: 15em 5;
+    -webkit-columns: 15em 5;
+    columns: 15em 5;
+}
+
+div.original-checkboxes ul li {
+    list-style-type: none;
 }
