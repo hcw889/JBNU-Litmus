@@ -3,6 +3,7 @@
 {% block media %}
     {% include "timezone/media-css.html" %}
     {{ form.media.css }}
+    <link rel="stylesheet" href="{{ static('css/components/form-buttons.css') }}">
     <style>
         #page-container {
             background: #FFF !important;
@@ -122,28 +123,6 @@
             position: absolute !important;
             width: 1px !important;
             white-space: nowrap !important; 
-        }
-
-        .form-area button,
-        .form-area .button {
-            color: #FFF;
-            background: none;
-            background-color: #5C95D9;
-            border-radius: 8px;
-            border: 1px solid #5C95D9;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            line-height: 1.5;
-            height: 40px;
-            font-family: "Pretendard";
-            transition: background-color 0.3s ease, color 0.3s ease;        
-        }
-
-        .form-area button:hover,
-        .form-area a.button:hover {
-            background-color: #5288C8;
-            color: #FAFAFA;
         }
 
         .fullwidth {

@@ -6,6 +6,10 @@
     <script type="text/javascript">
         window.valid_files = {{ valid_files_json }};
         $(function () {
+            $('#preview-link').on('click', function (e) {
+                e.preventDefault();
+                document.getElementById('preview-form').submit();
+            });
             function autofill_if_exists($select, file) {
                 if (!$select.val() && ~window.valid_files.indexOf(file))
                     $select.val(file).trigger('change');
@@ -480,16 +484,6 @@
             border-color: var(--secondary-color);
             box-shadow: 0 0 8px rgba(82, 168, 236, 0.3);
         }
-        .button, button, input[type=submit] {
-            margin-left: auto;
-            background: none;
-            border: 1px solid var(--primary-hover-color);
-            background-color: var(--primary-hover-color);
-            color: #fff;
-            font-size: 14px;
-            border-radius: 10px;
-            margin-top: -18px;
-        }
         #add-case-row:hover {
             text-decoration: underline;
         }
@@ -502,7 +496,7 @@
 
 {% block header %}
     <div class="title-line-action">
-        <a href="{{ url('testcase_preview', problem.code) }}" class="action-link preview-link" onclick="document.getElementById('preview-form').submit(); return false;">[ 테스트 케이스 미리보기 ]</a>
+        <a href="{{ url('testcase_preview', problem.code) }}" class="action-link preview-link" id="preview-link">[ 테스트 케이스 미리보기 ]</a>
         {% if data_form.instance.has_yml %}
             <a href="{{ url('problem_data_init', problem.code) }}" class="action-link yaml-link">[ YAML 보기 ]</a>
         {% endif %}
@@ -589,7 +583,7 @@
                 {% endif %}
                 {% if form.prefix and '__prefix__' in form.prefix %}
                     </tbody>
-                    <tbody class="extra-row-body" style="display: none">
+                    <tbody class="extra-row-body hidden">
                 {% endif %}
                 <tr data-type="{{ form['type'].value() }}">
                     <td>{{ form.id }}{{ form.order.errors }}{{ form.order }}</td>
@@ -626,7 +620,7 @@
         <input type="submit" value="{{ _('Save') }}" class="button">
     </form>
 
-    <div style="display: none" class="generator-args-editor"><textarea></textarea><a class="button">{{ _('Save') }}</a></div>
+    <div class="generator-args-editor hidden"><textarea></textarea><a class="button">{{ _('Save') }}</a></div>
     <script>
         
         document.getElementById('id_problem-data-zipfile').addEventListener('change', function() {

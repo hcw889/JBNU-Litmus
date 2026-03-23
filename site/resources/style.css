@@ -1,16 +1,8 @@
+/*
+ * Litmus Style - Plain CSS (SCSS에서 전환됨)
+ * 스타일 수정 시 이 파일을 직접 편집하세요.
+ */
 @charset "UTF-8";
-@-ms-viewport {
-  min-width: 480px;
-  max-width: device-width;
-}
-@-o-viewport {
-  min-width: 480px;
-  max-width: device-width;
-}
-@viewport {
-  min-width: 480px;
-  max-width: device-width;
-}
 a {
   color: #1958c1;
 }
@@ -60,9 +52,7 @@ hr {
   padding: 0;
 }
 
-.dashed {
-  border-bottom: 1px dashed #ccc;
-}
+
 
 th {
   vertical-align: middle;
@@ -216,8 +206,7 @@ noscript #noscript {
   transition: transform 0.4s;
 }
 .toggle.open .fa {
-  -ms-transform: rotate(90deg);
-      transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 #form-errors, .form-errors {
@@ -827,36 +816,6 @@ code .il {
   border-bottom-left-radius: 6px;
 }
 
-.mwe-math-mathml-inline {
-  display: inline !important;
-}
-
-.mwe-math-mathml-display {
-  display: block !important;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.mwe-math-mathml-a11y {
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-}
-
-.mwe-math-fallback-image-inline {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.mwe-math-fallback-image-display {
-  display: block;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
 @font-face {
   font-family: "Latin Modern Math";
   src: url("./libs/latinmodernmath/latinmodern-math.eot"); /* IE9 Compat Modes */
@@ -872,18 +831,8 @@ img.inline-math {
   display: inline;
 }
 
-.AB {
-  background-color: #CCC;
-  color: black;
-}
-
 .AC {
   background-color: #53f23f;
-  color: green;
-}
-
-._AC {
-  background-color: #DFFF00;
   color: green;
 }
 
@@ -1016,14 +965,6 @@ img.inline-math {
 .rssatom span i {
   text-align: center;
   display: block;
-}
-
-.open-tickets .object {
-  margin-left: 1em;
-  font-style: italic;
-}
-.open-tickets .author {
-  margin-left: 1em;
 }
 
 .no-clarifications-message {
@@ -1194,8 +1135,7 @@ ul.problem-list li {
   margin-right: 0.45em;
   position: relative;
   background-color: #ccc;
-  -ms-transform: translateY(35%);
-      transform: translateY(35%);
+  transform: translateY(35%);
   display: inline-block;
 }
 
@@ -1228,10 +1168,6 @@ ul.problem-list li {
 .license a {
   color: #808080;
   text-decoration: none;
-}
-
-.clarify {
-  float: right;
 }
 
 #problem_submit {
@@ -1556,13 +1492,6 @@ div.ticket-title small {
   font-weight: bold !important;
 }
 
-.deleted-user, .deleted-user a {
-  color: #999;
-  font-weight: normal;
-  -webkit-text-decoration: line-through #000;
-          text-decoration: line-through #000;
-}
-
 svg.rate-box {
   width: 1.2em;
 }
@@ -1842,8 +1771,7 @@ img.user-gravatar {
   border-radius: 3px;
   transition: all 0.1s ease;
   pointer-events: none;
-  -ms-transform: translate(-50%, 0);
-      transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
 #rating-tooltip .rate-group {
   color: white;
@@ -2073,7 +2001,6 @@ img.user-gravatar {
 }
 .content-description img {
   border: 0;
-  -ms-interpolation-mode: bicubic;
   vertical-align: middle;
 }
 .content-description td {
@@ -2150,18 +2077,6 @@ a.view-pdf {
 .social i {
   display: inline;
   font-size: 1.9em;
-}
-
-.facebook-this, .tweet-this {
-  display: inline;
-}
-
-.tweet-this i {
-  color: #55ACEE;
-}
-
-.facebook-this i {
-  color: #133783;
 }
 
 .social {
@@ -2276,13 +2191,12 @@ textarea:focus {
   margin-top: 1.5em;
 }
 
-.ul_tab_a_active, .tabs > ul > li.active > a:focus, .tabs > ul > li.active > span:focus, .tabs > ul > li.active > a:hover, .tabs > ul > li.active > span:hover, .tabs > ul > li.active > a, .tabs > ul > li.active > span {
+.tabs > ul > li.active > a:focus, .tabs > ul > li.active > span:focus, .tabs > ul > li.active > a:hover, .tabs > ul > li.active > span:hover, .tabs > ul > li.active > a, .tabs > ul > li.active > span {
   color: #000;
   cursor: default;
   border: 1px solid #ccc;
   border-bottom-color: #fff;
-  -o-border-image: none;
-     border-image: none;
+  border-image: none;
 }
 
 .tabs {
@@ -2663,12 +2577,6 @@ details {
   border: none;
 }
 
-.featherlight-iframe .featherlight-content {
-  border-bottom: 0;
-  padding: 0;
-  -webkit-overflow-scrolling: touch;
-}
-
 .comment-score {
   font-weight: bold;
   text-align: center;
@@ -2833,19 +2741,13 @@ a.voted {
 .bad-comment:hover {
   opacity: 1;
   /* This is necessary to prevent random flickering */
-  -ms-transform: translatez(0);
-      transform: translatez(0);
+  transform: translatez(0);
 }
 
 .wmd-panel {
   margin: 0;
   width: 100%;
   min-width: 0;
-}
-
-.wmd-button-bar {
-  width: 100%;
-  background-color: Silver;
 }
 
 .wmd-input {
@@ -2862,61 +2764,6 @@ a.voted {
   word-break: break-word;
 }
 
-.wmd-button-row {
-  margin: 5px;
-  padding: 0;
-  line-height: 0;
-}
-
-.wmd-spacer {
-  width: 15px;
-  height: 20px;
-  display: inline-block;
-  list-style: none;
-}
-
-.wmd-button {
-  width: 20px;
-  height: 20px;
-  padding-left: 2px;
-  padding-right: 3px;
-  display: inline-block;
-  list-style: none;
-  cursor: pointer;
-}
-
-.wmd-button > span {
-  background: url("./pagedown/wmd-buttons.png") no-repeat 0 0;
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-}
-
-.wmd-prompt-background {
-  background-color: Black;
-}
-
-.wmd-prompt-dialog {
-  border: 1px solid #ccc;
-  background-color: #f8f8f8;
-}
-
-.wmd-prompt-dialog > div {
-  font-size: 0.8em;
-  font-family: arial, helvetica, sans-serif;
-}
-
-.wmd-prompt-dialog > form > input[type=text] {
-  border: 1px solid #ccc;
-  color: #000;
-}
-
-.wmd-prompt-dialog > form > input[type=button] {
-  border: 1px solid #808080;
-  font-family: trebuchet MS, helvetica, sans-serif;
-  font-size: 0.8em;
-  font-weight: bold;
-}
 
 .wmd-wrapper {
   padding-right: 0 !important;
@@ -3011,10 +2858,6 @@ div.dmmd-preview-stale {
 
 #submissions-table {
   background: rgba(0, 0, 0, 0.01);
-}
-
-.submissions-status-table {
-  border-spacing: 0;
 }
 
 .submission-row {
@@ -3257,16 +3100,6 @@ label[for=language], label[for=status], label[for=problem], label[for=user] {
 
 .case-AC {
   color: green;
-  font-weight: bold;
-}
-
-.case-_AC {
-  color: #BBCC00;
-  font-weight: bold;
-}
-
-.case-WA {
-  color: red;
   font-weight: bold;
 }
 

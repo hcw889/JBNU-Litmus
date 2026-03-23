@@ -1,0 +1,39 @@
+/* 버튼 공통 스타일 - base.html + 템플릿 중복에서 통합 */
+.button, button, input[type=submit] {
+    width: 100px;
+    height: 32px;
+    color: white;
+    text-decoration: none !important;
+    cursor: pointer;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-weight: normal;
+    background: var(--primary-color, #5C95D9);
+    border-radius: 10px;
+    padding: 6px 12px;
+    display: block;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+    font-family: Pretendard;
+    line-height: 17.5px;
+    margin: 0 auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.button:hover, button:hover, input[type=submit]:hover {
+    background: var(--primary-hover-color, #5288C8);
+    color: var(--white-hover-color, #FAFAFA);
+}
+.button:active, button:active, input[type=submit]:active {
+    background: var(--primary-hover-color, #5288C8);
+    color: var(--white-hover-color, #FAFAFA);
+}
+.button.full, button.full, input[type=submit].full {
+    padding: 6px 0;
+}
+.button.disabled, button.disabled, input[type=submit].disabled {
+    background: none !important;
+    background-color: darkgray !important;
+    border-color: grey !important;
+    cursor: not-allowed;
+}

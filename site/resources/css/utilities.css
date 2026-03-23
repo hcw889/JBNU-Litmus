@@ -1,0 +1,26 @@
+/* =============================================
+   Utility Classes
+   - 인라인 style= 속성을 대체하는 재사용 가능한 유틸리티
+   ============================================= */
+
+/* Display */
+.hidden { display: none; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
+
+/* Alignment */
+.align-middle { vertical-align: middle; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+
+/* Border */
+.border-none { border: none; }
+
+/* Float */
+.float-right { float: right; }
+
+/* Status colors (judge 상태 표시용) */
+.text-ac { color: #44AD41; }
+.text-err { color: #DE2121; }
+.text-warn { color: #DD4124; }
+.text-muted { color: #6c757d; }

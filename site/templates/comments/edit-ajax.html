@@ -1,7 +1,7 @@
 <div class="comment-submit">
     <form id="comment-edit" action="{{ request.get_full_path() }}" method="post">
-        <span style="display: none" class="comment-id">{{ comment.id }}</span>
-        <span style="display: none" class="read-back">{{ url('comment_content', comment.id) }}</span>
+        <span class="comment-id hidden">{{ comment.id }}</span>
+        <span class="read-back hidden">{{ url('comment_content', comment.id) }}</span>
         {% csrf_token %}
         {% if form.non_field_errors() or form.body.errors %}
             <div class="form-errors">

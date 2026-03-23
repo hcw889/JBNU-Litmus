@@ -1,0 +1,28 @@
+/* 액션 버튼 스타일 - submission 템플릿에서 추출 */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.action-btn {
+    padding: 6px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    background: #edf3fb;
+    color: #5285c4;
+}
+
+.action-btn:hover {
+    background: #e3eaf6;
+    color: #6291d0;
+    text-decoration: none;
+}

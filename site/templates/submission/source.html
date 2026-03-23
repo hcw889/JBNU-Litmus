@@ -1,6 +1,8 @@
 {% extends "submission/info-base.html" %}
 
 {% block media %}
+    <link rel="stylesheet" href="{{ static('css/components/cards.css') }}">
+    <link rel="stylesheet" href="{{ static('css/components/action-buttons.css') }}">
     <style>
         .title-div {
             padding-top: 24px;
@@ -26,61 +28,6 @@
 
         a:active .line .highlighter {
             background: rgba(255, 212, 0, 0.48);
-        }
-
-        /* 카드 스타일 */
-        .status-card {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            margin-bottom: 20px;
-            overflow: hidden;
-            padding: 20px 30px;
-        }
-        
-        .card-header {
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .card-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--font-basic-black);
-            margin: 0;
-            font-family: Pretendard, sans-serif;
-        }
-        
-        .card-content {
-            padding-top: 15px;
-        }
-
-        /* 액션 버튼 스타일 */
-        .action-buttons {
-            display: flex;
-            gap: 12px;
-            justify-content: flex-end;
-        }
-        .action-btn {
-            padding: 6px 16px;
-            border-radius: 6px;
-            border: none;
-            font-size: 14px;
-            font-weight: 400;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s ease;
-            background: #edf3fb;
-            color: #5285c4;
-        }
-
-        .action-btn:hover {
-            background: #e3eaf6;
-            color: #6291d0;
-            text-decoration: none;
         }
 
         /* 오버랩 복사 버튼 */
@@ -234,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         </button>
                     </form>
                     -->
-                    <form id="rejudge-form" action="{{ url('submission_rejudge') }}" method="post" style="display: inline;">
+                    <form id="rejudge-form" action="{{ url('submission_rejudge') }}" method="post" class="inline">
                         {% csrf_token %}
                         <input type="hidden" name="id" value="{{ submission.id }}">
                         <input type="hidden" name="path" value="{{ url('submission_status', submission.id) }}">

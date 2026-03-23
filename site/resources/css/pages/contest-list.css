@@ -1,0 +1,515 @@
+/* ==========================================================================
+   Contest List Shared Styles
+   Used by: contest/list.html, contest/pastlist.html, contest/contest-tabs.html
+   ========================================================================== */
+
+/* --- Layout --- */
+
+.content-body-box {
+    background-color: #f9fafb;
+    font-family: "Pretendard";
+    width: 100%;
+}
+
+#content-body {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.content-description {
+    width: 80%;
+    flex: 1;
+}
+
+.content-description h4 {
+    border-bottom: none;
+    margin: 0;
+    padding: 0 0 0 0;
+    font-family: "Pretendard";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    color: var(--font-basic-black);
+}
+
+/* --- Contest Group Sidebar --- */
+
+.contest-group-container {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    color: #8391A1;
+    list-style-type: none;
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+.contest-group-list {
+    width: 100%;
+}
+
+.contest-group-item {
+    height: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.contest-group-item:hover {
+    background-color: #D9D9D936;
+    transition: background-color 0.3s ease;
+}
+
+.contest-group-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.contest-group-item label {
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.contest-group-item.active {
+    background: none;
+    background-color: #D9D9D936;
+    color: #373D47;
+}
+
+.contest-group-item.active label {
+    color: #373D47;
+}
+
+.contest-group-item input[type="checkbox"]:checked + label .material-symbols-outlined {
+    font-size: 24px;
+    border: none;
+    background: #FFFFFF;
+    color: var(--LITMUS-primary, #5C95D9);
+    border-radius: 50%;
+}
+
+.contest-group-item input[type="checkbox"]:checked + label .fa-regular.fa-circle::before {
+    content: "\f058";
+    font-weight: 900;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+label .material-symbols-outlined {
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+    padding: 0;
+    box-sizing: border-box;
+    margin-right: 10px;
+    font-size: 24px;
+    color: #D9D9D9;
+}
+
+/* --- Contest Cards --- */
+
+.contest-div {
+    background: none;
+    background-color: white;
+    border-radius: 10px;
+    padding: 18px 24px 12px 24px;
+    margin: 0 0 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.contest-block {
+    display: flex;
+    font-family: "Pretendard";
+    padding: 0.5em 0.5em 0.5em 1em;
+}
+
+.contest-head-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.contest-contents {
+    display: flex;
+    flex-direction: column;
+}
+
+.contest-list-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.contest-time {
+    display: flex;
+    color: var(--font-grey);
+    margin-left: 4px;
+    padding-top: 0.5em;
+}
+
+.text-align {
+    padding-top: 2px;
+    font-size: 18px;
+    color: var(--font-basic-black);
+}
+
+.text-align a {
+    color: var(--font-basic-black);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.text-align a:hover {
+    color: var(--primary-color);
+}
+
+/* --- Table Styles --- */
+
+.table {
+    border-spacing: 0;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5em;
+    background: rgba(255,255,255,1.0);
+}
+
+.table td {
+    border-top: 1px solid rgba(217, 217, 217, 0.5);
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+}
+
+.table tr:first-child td {
+    border: none;
+}
+
+.table.striped tr:nth-child(even) {
+    background: none;
+    border-left: var(--border-color);
+}
+
+table.active tr td {
+    background: linear-gradient(90deg, rgba(159, 205, 242, 0.2) 0.62%, rgba(167, 231, 244, 0) 100.62%);
+}
+
+.active {
+    background: linear-gradient(90deg, rgba(159, 205, 242, 0.2) 0.62%, rgba(167, 231, 244, 0) 100.62%);
+}
+
+.contest-list tbody tr {
+    height: 100px;
+}
+
+.contest-list td {
+    padding: 7px 5px;
+    vertical-align: middle;
+}
+
+.contest-list td:last-child {
+    width: 200px;
+}
+
+/* --- Event Bar Colors --- */
+
+.event-bar {
+    width: 8px;
+    height: 42px;
+    margin-right: 8px;
+}
+
+.activity {
+    background: linear-gradient(180deg, #9fcdf2 0%, #a7e7f4 100%);
+}
+
+.upcoming {
+    background: linear-gradient(360deg, #FFD9A0 0%, #9FCDF2 100%);
+}
+
+.past {
+    background: linear-gradient(360deg, #123B63 0%, #9FCDF2 100%);
+}
+
+/* --- Modal Styles --- */
+
+.modal_overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+}
+
+.modal_window {
+    background: white;
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 380px;
+    height: 210px;
+    position: relative;
+    padding: 10px;
+}
+
+.modal_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 1.5em;
+}
+
+.modal_title_side {
+    flex: 0 0 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.modal_content {
+    width: 266px;
+    margin: 0 auto;
+}
+
+.contest-entry {
+    display: none;
+}
+
+#contest-code, #contest-code-button {
+    width: 266px;
+    height: 40px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+#contest-code-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+#close_modal {
+    cursor: pointer;
+}
+
+#contest-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* --- Contest Tabs Modal (join-contest) --- */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#join-contest-code, #join-contest-submit {
+    width: 266px;
+    height: 40px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+#close_join_modal {
+    cursor: pointer;
+}
+
+#join-contest-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* --- Contest Join Pseudotab --- */
+
+form.contest-join-pseudotab {
+    width: auto;
+    background: none;
+    background-color: #5C95D9;
+    margin-left: auto;
+    border-radius: 8px 8px 8px 8px;
+    border: 1px solid #5C95D9;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+form.contest-join-pseudotab.leave {
+    display: none;
+}
+
+form.contest-join-pseudotab input[type="submit"] {
+    height: auto;
+    width: auto;
+    font-weight: normal;
+    color: white !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0;
+}
+
+form.contest-join-pseudotab input {
+    display: inline;
+    border: none;
+    padding: 0;
+    background: none;
+    font-weight: 600;
+}
+
+/* --- Pagination --- */
+
+.top-pagination-bar {
+    margin: 0;
+    margin-bottom: 1.5em;
+    margin-left: auto;
+    justify-content: right;
+}
+
+.top-pagination-bar .select2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.top-pagination-bar .select2-selection {
+    width: 200px;
+    height: 33px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding-left: 12px;
+    font-size: 12px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top-pagination-bar .select2-selection__rendered {
+    color: #8391A1;
+    font-size: 12px;
+}
+
+.select2-search--dropdown .select2-search__field {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.select2-search--dropdown {
+    left: 1040px;
+}
+
+.select2-dropdown {
+    width: 200px !important;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.bottom-pagination-bar {
+    margin: 0 auto;
+    margin-bottom: 21px;
+    margin-top: 21px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bottom-pagination-bar .pagination {
+    color: #8391A1;
+}
+
+ul.pagination > li.disabled-page {
+    display: none;
+}
+
+ul.pagination > li > a, ul.pagination > li > span {
+    margin: 0 3px;
+    background: none;
+    border: none;
+    color: #8391A1;
+    border-radius: 20px !important;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+ul.pagination > .active-page > a, ul.pagination > .active-page > span {
+    margin: 0 3px;
+    background: none;
+    color: #5C95D9;
+    border-radius: 20px !important;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    background-color: #f2f3f4;
+}
+
+ul.pagination > li > a:hover {
+    background-color: #f2f3f4;
+}

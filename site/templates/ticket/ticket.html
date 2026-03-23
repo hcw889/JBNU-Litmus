@@ -208,10 +208,8 @@
                     </div>
                 </div>
 
-                <button data-ajax="{{ url('ticket_close', ticket.id) }}" data-open="0" class="close-ticket"
-                        {% if not ticket.is_open %}style="display: none"{% endif %}>{{ _('Close ticket') }}</button>
-                <button data-ajax="{{ url('ticket_open', ticket.id) }}" data-open="1" class="open-ticket"
-                        {% if ticket.is_open %}style="display: none"{% endif %}>{{ _('Reopen ticket') }}</button>
+                <button data-ajax="{{ url('ticket_close', ticket.id) }}" data-open="0" class="close-ticket{% if not ticket.is_open %} hidden{% endif %}">{{ _('Close ticket') }}</button>
+                <button data-ajax="{{ url('ticket_open', ticket.id) }}" data-open="1" class="open-ticket{% if ticket.is_open %} hidden{% endif %}">{{ _('Reopen ticket') }}</button>
 
                 {% if perms.judge.change_ticket or request.profile in assignees %}
                     <div class="info-box">
@@ -221,7 +219,7 @@
                             </a>
                         </div>
                         <div id="ticket-notes" class="info-data">
-                            <div{% if ticket.notes %} style="display: none"{% endif %} class="info-empty">
+                            <div class="info-empty{% if ticket.notes %} hidden{% endif %}">
                                 {{ _('Nothing here.') }}
                             </div>
                             <div class="info-real">{{ ticket.notes|linebreaks }}</div>
