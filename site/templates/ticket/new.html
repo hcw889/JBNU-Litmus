@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
-{% block media %}{{ form.media.css }}{% endblock %}
+{% block media %}
+    <link rel="stylesheet" href="{{ static('css/tickets.css') }}">
+    <link rel="stylesheet" href="{{ static('css/editor.css') }}">
+    {{ form.media.css }}
+{% endblock %}
 
 {% block js_media %}{{ form.media.js }}{% endblock %}
 
