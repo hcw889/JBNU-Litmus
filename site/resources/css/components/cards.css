@@ -39,4 +39,9 @@
 
 .card-content {
     padding-top: 15px;
+    position: relative;
+}
+
+.card-title.error {
+    color: #DD4124;
 }

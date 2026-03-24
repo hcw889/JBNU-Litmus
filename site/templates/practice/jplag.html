@@ -15,6 +15,7 @@
     }
     .button, input[type="submit"].contest-jplag {
         width: auto;
+        padding: 10px;
         background: none;
         background-color: #5C95D9;
         border: none;
@@ -123,16 +124,14 @@
     <div class="pane">
         <form method="post" action="{{ url('practice_jplag', contest.key) }}">
             {% csrf_token %}
-            <input type="submit" class="unselectable button full contest-jplag" style="padding: 10px;"
-                value="{% if has_results %} 제출물 표절 검사 다시 하기 {% else %} 제출물 표절 검사 하기 {% endif %}">
+            <input type="submit" class="unselectable button full contest-jplag"                value="{% if has_results %} 제출물 표절 검사 다시 하기 {% else %} 제출물 표절 검사 하기 {% endif %}">
         </form>
     </div>
     {% if has_results %}
     <div class="pane">
         <form method="post" action="{{ url('practice_jplag_delete', contest.key) }}">
             {% csrf_token %}
-            <input type="submit" class="unselectable button full contest-jplag-delete" style="padding: 10px;"
-                value="표절 검사 결과 삭제">
+            <input type="submit" class="unselectable button full contest-jplag-delete"                value="표절 검사 결과 삭제">
         </form>
     </div>
     {% endif %}

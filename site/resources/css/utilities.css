@@ -24,3 +24,8 @@
 .text-err { color: #DE2121; }
 .text-warn { color: #DD4124; }
 .text-muted { color: #6c757d; }
+.icon-muted { color: #8391a1; }
+
+/* Spacing */
+.mb-15 { margin-bottom: 15px; }
+.pt-07em { padding-top: 0.7em; }

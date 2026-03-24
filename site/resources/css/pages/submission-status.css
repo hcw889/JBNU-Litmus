@@ -280,3 +280,9 @@
 .case-icon-loading { color: #5C95D9; font-size: 18px; margin-left: 8px; }
 .testcase-color-col { width: 8px; padding: 0; }
 .testcase-group-header { background: #f8f9fa; font-weight: 600; color: #17171B; padding: 12px 16px; }
+
+.submission-date {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+}

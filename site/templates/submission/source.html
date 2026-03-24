@@ -200,10 +200,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
         </div>
-        <div class="card-content" style="position: relative;">
+        <div class="card-content">
             <!-- 제출 정보 -->
             <div style="color: #6c757d; text-align: right;">
-                <span class="submission-date" style="display: inline-flex; gap: 10px; align-items: center;">
+                <span class="submission-date">
                     {% with date=submission.date|date(_('N j, Y, g:i a')), can_edit=submission.problem.is_editable_by(request.user) %}
                         {% if can_edit and submission.judged_on %}
                             {{ _('%(date)s on %(judge)s', date=date, judge=submission.judged_on.name) }}

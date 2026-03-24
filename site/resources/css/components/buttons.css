@@ -31,6 +31,17 @@
 .button.full, button.full, input[type=submit].full {
     padding: 6px 0;
 }
+.btn-lg {
+    padding: 10px 20px;
+}
+.btn-clarification {
+    background-color: #2196F3;
+    border-color: #2196F3;
+}
+.btn-secondary {
+    background-color: #888;
+    border-color: #888;
+}
 .button.disabled, button.disabled, input[type=submit].disabled {
     background: none !important;
     background-color: darkgray !important;

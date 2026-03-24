@@ -58,15 +58,6 @@
         <link rel="stylesheet" href="{{ static('css/components/buttons.css') }}">
         <link rel="stylesheet" href="{{ static('css/components/select2-overrides.css') }}">
         <link rel="stylesheet" href="{{ static('css/utilities.css') }}">
-        <link rel="stylesheet" href="{{ static('css/code.css') }}">
-        <link rel="stylesheet" href="{{ static('css/tables.css') }}">
-        <link rel="stylesheet" href="{{ static('css/status.css') }}">
-        <link rel="stylesheet" href="{{ static('css/forms.css') }}">
-        <link rel="stylesheet" href="{{ static('css/tabs.css') }}">
-        <link rel="stylesheet" href="{{ static('css/alerts.css') }}">
-        <link rel="stylesheet" href="{{ static('css/ratings.css') }}">
-        <link rel="stylesheet" href="{{ static('css/modals.css') }}">
-        <link rel="stylesheet" href="{{ static('css/typography.css') }}">
         {% if INLINE_FONTAWESOME %}<link rel="stylesheet" href="{{ static('libs/fontawesome/font-awesome.css') }}">{% endif %}
         <link rel="stylesheet" type="text/css" href="{{ static('libs/clipboard/tooltip.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ static('libs/select2/select2.css') }}">
@@ -277,7 +268,7 @@
 </script>
 {% if request.in_contest %}
     <div id="contest-info">
-        <div class="info" style="vertical-align: middle">
+        <div class="info align-middle">
             <div class="contest-name" data-fullname="{{ request.participation.contest.name }}">
                 {{ request.participation.contest.name }}
                 {# <!-- <span class="tooltip">{{ request.participation.contest.name }}</span> --> #}
